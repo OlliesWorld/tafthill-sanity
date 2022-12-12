@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/dashboard": "^3.0.0",
     "@sanity/icons": "^2.1.0",
     "@sanity/vision": "^3.0.6",
     "react": "^18.2.0",
@@ -22,6 +23,8 @@
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "sanity": "^3.0.6",
+    "sanity-plugin-dashboard-widget-cats": "^2.0.1",
+    "sanity-plugin-dashboard-widget-document-list": "^1.0.1",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

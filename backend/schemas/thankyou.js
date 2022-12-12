@@ -3,7 +3,7 @@ import {EnvelopeIcon} from '@sanity/icons'
 export default {
     name: 'thankyou',
     type: 'document',
-      title: 'Thank You',  
+    title: 'Thank You',  
       icon:    EnvelopeIcon,
       fields: [        
         {

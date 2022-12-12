@@ -10,7 +10,12 @@ return (
  
   <Layout>
      <Seo title="Testimonials" />
-
+<div className="w-3/4 m-auto grid grid-cols-2 gap-8 mb-12">
+    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote}" ~{data.testimonials.name}</p>
+    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote2}" ~{data.testimonials.name2}</p> 
+    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote4}" ~{data.testimonials.name4}</p>
+    
+</div>
         <div className="w-3/4 grid grid-cols-3 gap-16 justify-center mx-auto mb-8 text-center">
             <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-tan max-w-sm">
                 <p className="text-gray-700 text-base mb-4">

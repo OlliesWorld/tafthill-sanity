@@ -10,7 +10,7 @@ const ThanksPage = ({data}) => (
     <Layout>
      <Seo title="Home" />
      <div className="m-auto text-center">
-        <GatsbyImage image={data.thanks.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename} />
+        <GatsbyImage image={data.thanks.mainImage.asset.gatsbyImageData} alt={data.thanks.mainImage.asset.filename} />
         </div>
       <div className="w-5/6 lg:w-1/2 bg-tan mx-auto mb-28 p-8">
         <h2 className="text-green text-5xl text-center mb-4">{data.thanks.title}</h2>
