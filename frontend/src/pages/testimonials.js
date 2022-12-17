@@ -10,100 +10,27 @@ return (
  
   <Layout>
      <Seo title="Testimonials" />
-<div className="w-3/4 m-auto grid grid-cols-2 gap-8 mb-12">
-    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote}" ~{data.testimonials.name}</p>
-    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote2}" ~{data.testimonials.name2}</p> 
-    <p className="bg-tan/20 p-4 text-white/80">"{data.testimonials.quote4}" ~{data.testimonials.name4}</p>
+<div className="w-3/4 m-auto grid grid-cols-2 gap-8 mb-12 text-xl">
+{data.testimonials.quote && <div className="bg-tan/20 p-4 text-white/80"> <p>" {data.testimonials.quote} "</p><p className="text-center mt-8">~ {data.testimonials.name} ~</p></div>}
+   {data.testimonials.quote2 && <div className="bg-tan/20 p-4 text-white/80"><p >" {data.testimonials.quote2} "</p><p className="text-center mt-12"> ~{data.testimonials.name2} ~</p> </div>}
+   {data.testimonials.quote3 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote3}"</p><p className="text-center mt-12"> ~{data.testimonials.name3}~</p></div>}
+   {data.testimonials.quote4 &&<div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote4}"</p><p className="text-center mt-12"> ~{data.testimonials.name4}~</p></div>}
+   {data.testimonials.quote5 &&<div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote5}"</p><p className="text-center mt-12"> ~{data.testimonials.name5}~</p> </div>}
+   {data.testimonials.quote6 &&<div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote6}"</p><p className="text-center mt-12"> ~{data.testimonials.name6}~</p></div>}
+   {data.testimonials.quote7 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote7}"</p><p className="text-center mt-12"> ~{data.testimonials.name7}~</p></div>}
+   {data.testimonials.quote8 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote8}"</p><p className="text-center mt-12"> ~{data.testimonials.name8}~</p> </div>}
+   {data.testimonials.quote9 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote9}"</p><p className="text-center mt-12"> ~{data.testimonials.name9}~</p></div>}
+   {data.testimonials.quote10 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote10}"</p><p className="text-center mt-12"> ~{data.testimonials.name10}~</p></div>}
+   {data.testimonials.quote11 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote11}"</p><p className="text-center mt-12"> ~{data.testimonials.name11}~</p> </div>}
+   {data.testimonials.quote12 &&<div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote12}"</p><p className="text-center mt-12"> ~{data.testimonials.name12}~</p></div>}
+   {data.testimonials.quote13 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote13}"</p><p className="text-center mt-12"> ~{data.testimonials.name13}~</p></div>}
+   {data.testimonials.quote14 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote14}"</p><p className="text-center mt-12"> ~{data.testimonials.name14}~</p> </div>}
+   {data.testimonials.quote15 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote15}"</p><p className="text-center mt-12"> ~{data.testimonials.name15}~</p></div>}
+   {data.testimonials.quote16 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote16}"</p><p className="text-center mt-12"> ~{data.testimonials.name16}~</p></div>}
+
     
 </div>
-        <div className="w-3/4 grid grid-cols-3 gap-16 justify-center mx-auto mb-8 text-center">
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-tan max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name}</h5>     
-            </div>
-            
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-tan max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote4}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name4}</h5>     
-            </div>
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-tan max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote5}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name5}</h5>     
-            </div>
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote2}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name2}</h5>     
-            </div>
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote3}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name3}</h5>     
-            </div>
-            <div className="block p-8 rounded-br-lg rounded-tl-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote6}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name6}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote7}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name7}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote8}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name8}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote9}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name9}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote10}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name10}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote11}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name11}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote12}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name12}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote13}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name13}</h5>     
-            </div>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <p className="text-gray-700 text-base mb-4">
-                {data.testimonials.quote14}
-                </p>
-                <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">{data.testimonials.name14}</h5>     
-            </div>
-            
-        </div>
+        
  
       
   </Layout>

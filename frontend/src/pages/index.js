@@ -4,6 +4,30 @@ import Seo from "../components/seo"
 
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
+
+// const HeroCarousel = ({data})  => { 
+// const image = data.sanityHome.mainImage
+//   return (
+    
+//    <div className="  h-full w-full md:h-3/4 md:w-3/4 m-auto">
+//      <AliceCarousel autoPlay autoPlayInterval="3400" infinite animationType="fadeout" animationDuration={800}>
+//       {image.map((img) => (
+
+//       ))}
+//      <GatsbyImage image={data.sanityHome.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename}/>
+//      <GatsbyImage image={data.sanityHome.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename}/>
+//      <GatsbyImage image={data.sanityHome.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename}/>
+    
+   
+//       </AliceCarousel>
+//    </div>
+    
+//   )
+// }
+
 
 
 const IndexPage = ({data}) => (
@@ -11,7 +35,8 @@ const IndexPage = ({data}) => (
   <Layout>
      <Seo title="Home" />
      <div className="m-auto text-center">
-        <GatsbyImage image={data.sanityHome.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename}/>
+       {/* <HeroCarousel /> */}
+       <GatsbyImage image={data.sanityHome.mainImage.asset.gatsbyImageData} alt={data.sanityHome.mainImage.asset.filename}/>
         </div>
       <div className="w-5/6 lg:w-1/2 bg-tan mx-auto mb-28 p-8">
         <h3 className="text-darktan text-2xl">{data.sanityHome.subtitle}</h3>

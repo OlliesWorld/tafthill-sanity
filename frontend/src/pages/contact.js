@@ -10,16 +10,20 @@ return (
  
   <Layout>
      <Seo title="Contact us" />
-     <div className="w-3/4 grid grid-cols-2 m-auto text-center">
+     <div className="mb-12">
+       <h2 className="text-darktan text-3xl text-center">Send us a message</h2>
+     <div className="lg:w-2/3 container grid lg:grid-cols-2 m-auto">
        <Form />
-              <div className="bg-tan h-1/2 w-3/4 p-6 items-center">
-                  <p>We are conveniently located within 2 miles of CSU, and Old Town. There is direct access to the Poudre Trail and close access to Lory State Park and Reservoir Ridge.</p>
-<br/>
-                    <p>1012 N Taft Hill Rd
-                    Fort Collins, CO 80521</p>
-              </div>
+        <div className="col-span-1 bg-tan lg:h-8/12  p-6 text-xl my-8">
+          <p>We are conveniently located within 2 miles of CSU, and Old Town. There is direct access to the Poudre Trail and close access to Lory State Park and Reservoir Ridge.</p>
+          <div className="text-3xl text-center mt-12">
+            <p>1012 N Taft Hill Rd</p>
+            <p>Fort Collins, CO 80521</p>
+          </div>
+                   
+        </div>
     </div>
-      
+    </div> 
   </Layout>
 )
               }
