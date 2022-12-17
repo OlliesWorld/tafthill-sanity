@@ -31,6 +31,12 @@ export default {
       
       },
       {
+        name: 'gallery',
+        title: 'Gallery',
+        type: 'array',
+        of: [{type: 'image'}]
+    },
+      {
         name: 'slug',
         title: 'Slug',
         type: 'slug',
