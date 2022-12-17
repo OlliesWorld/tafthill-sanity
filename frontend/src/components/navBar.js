@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
     return (
-        <nav className="w-full mb-8">
+        <nav className="w-full ">
             <div >
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -54,7 +54,7 @@ export default function NavBar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="text-center items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-tan uppercase">
+                        <ul className="text-center text-2xl items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-tan uppercase">
                             <li className=" hover:border-b-2 hover:ease-in-out hover:transition-all">
                                 <Link  to="/">Home</Link>
                             </li>

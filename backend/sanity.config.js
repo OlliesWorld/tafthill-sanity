@@ -5,7 +5,6 @@ import {schemaTypes} from './schemas'
 import { dashboardTool, 
   projectUsersWidget,
   projectInfoWidget} from "@sanity/dashboard";
-  import { catsWidget } from "sanity-plugin-dashboard-widget-cats";
   import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
 
 
@@ -22,7 +21,6 @@ export default defineConfig({
         documentListWidget({title: 'Last edited page', order: '_updatedAt desc'}),
         projectInfoWidget(),
         projectUsersWidget(),
-        catsWidget()
       ]
       }), 
     deskTool(), visionTool({
