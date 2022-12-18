@@ -18,7 +18,7 @@ return (
      <div className="m-auto text-center">
         <GatsbyImage image={data.training.mainImage.asset.gatsbyImageData} alt="about image"/>
         </div>
-        <div className="w-3/4 text-tan text-center m-auto p-8 mb-8 text-2xl ">    
+        <div className="w-5/6 lg:w-3/5 text-tan text-center m-auto p-8 mb-8 text-2xl ">    
                 <p>{data.training.article1}</p>
       </div> 
       <div className="w-5/6 lg:w-1/2 bg-tan m-auto p-8 mb-8">
@@ -29,12 +29,12 @@ return (
         <GatsbyImage image={data.training.mainImage2.asset.gatsbyImageData} alt="about image"/>
       </div>
       
-       <div className="w-3/4  text-tan text-center m-auto p-8 mb-8 text-2xl">    
+       <div className="w-5/6 lg:w-3/5 text-tan text-center m-auto p-8 mb-8 text-2xl">    
        <p>{data.training.article2}</p>
         
       </div> 
       <div className="m-auto text-center">
-        <a href="https://www.wildrosemagic.org/" target="_blank" rel="noreferrer"  ><GatsbyImage className="hover:bg-tan/10" image={data.training.logo.asset.gatsbyImageData} alt="about image"/></a>
+        <GatsbyImage  image={data.training.logo.asset.gatsbyImageData} alt="about image"/>
       </div>
       
   </Layout>

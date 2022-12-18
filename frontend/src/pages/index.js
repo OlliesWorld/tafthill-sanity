@@ -31,7 +31,7 @@ const IndexPage = ({data}) => (
     >
        {data.home.gallery.map((img) => (
         <SwiperSlide key={img.asset.assetId} >
-            <GatsbyImage image={img.asset.gatsbyImageData} alt={img.asset.filename} className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
+            <GatsbyImage image={img.asset.gatsbyImageData} alt={img.asset.filename} className="object-cover max-h-[30rem] lg:w-3/4 m-auto"/>
             </SwiperSlide>
       ))}
     </Swiper>
@@ -43,7 +43,7 @@ const IndexPage = ({data}) => (
       </div>
      
       <div className="m-auto text-center">
-       <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename}/>
+       <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
         </div>
    </div>
   </Layout>

@@ -39,14 +39,14 @@ const ContactForm = (props) => {
   };
 
   return (
-    <div className="block p-6 shadow-lg max-w-md m-auto text-center mt-4">
+    <div className="block p-6 max-w-md m-auto text-center mt-4">
     <form data-netlify="true" action="/" name="contactUs" method="post" onSubmit={handleSubmit} className="w-full">
      {/* <label htmlFor="nameInput" className="text-4xl text-dark-tan mb-2 w-full font-bold">Send us a Message</label> */}
       <input type="hidden" name="form-name" value="contact-form" />
   
-        <input className='p-2 mb-2 w-80 text-black' name="Name" type="text" onChange={handleChange} required placeholder="Name"  />
-        <input className='p-2 mb-2 w-80 text-black' type='email' placeholder='Email' name='email' onChange={handleChange} required />
-        <textarea className='w-80 text-black' placeholder='Message' name='message' rows='8' minLength="8" onChange={handleChange} required />
+        <input className='p-2 mb-2 w-80 md:w-96 text-black' name="Name" type="text" onChange={handleChange} required placeholder="Name"  />
+        <input className='p-2 mb-2 w-80 md:w-96 text-black' type='email' placeholder='Email' name='email' onChange={handleChange} required />
+        <textarea className='w-80 md:w-96 text-black' placeholder='Message' name='message' rows='8' minLength="8" onChange={handleChange} required />
         <button className='bg-darktan text-white p-2 mt-4' type='submit' >Contact Us</button>
             
 
