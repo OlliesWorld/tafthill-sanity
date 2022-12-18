@@ -11,7 +11,7 @@ return (
  
   <Layout>
      <Seo title="Facility" />
-     <h2 className="text-darktan text-5xl text-center mb-4">{data.facility.title}</h2>
+     <h2 className="text-darktan text-5xl text-center mb-8">{data.facility.title}</h2>
      <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage.asset.gatsbyImageData} alt="about image"/>
         </div>

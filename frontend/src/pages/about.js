@@ -12,7 +12,7 @@ return (
  
   <Layout>
      <Seo title="About" />
-     <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto">
+     <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto mb-8">
       <div className="m-auto text-center">
         <GatsbyImage image={data.sanityAbout.mainImage.asset.gatsbyImageData} alt="about image"className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
         </div>

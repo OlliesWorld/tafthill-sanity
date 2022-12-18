@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
     return (
-        <nav className="w-full ">
+        <nav className="w-full mb-8">
             <div >
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">

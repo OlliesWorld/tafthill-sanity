@@ -20,7 +20,7 @@ const IndexPage = ({data}) => (
  
   <Layout>
      <Seo title="Home" />
-     <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto">
+     <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto mb-8">
      <Swiper
       modules={[ Pagination, A11y, Autoplay, EffectFade]}
       spaceBetween={5}
