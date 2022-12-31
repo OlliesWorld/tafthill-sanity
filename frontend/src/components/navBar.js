@@ -14,6 +14,7 @@ export default function NavBar() {
                             <button
                                 className="p-2  rounded-md outline-none focus:border-tan focus:border"
                                 onClick={() => setNavbar(!navbar)}
+                                aria-label="Nav mobile hamburger link"
                             >
                                 {navbar ? (
                                     <svg

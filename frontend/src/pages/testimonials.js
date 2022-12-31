@@ -11,27 +11,25 @@ return (
   <Layout>
      <Seo title="Testimonials" />
         <div className="w-3/4 m-auto grid grid-cols-2 gap-8 mb-12 text-xl">
-            {data.testimonials.quote && <div className="bg-tan/20 p-4 text-white/80"> <p>" {data.testimonials.quote} "</p><p className="text-center mt-8">~ {data.testimonials.name} ~</p></div>}
-            {data.testimonials.quote2 && <div className="bg-tan/20 p-4 text-white/80"><p >" {data.testimonials.quote2} "</p><p className="text-center mt-12"> ~{data.testimonials.name2} ~</p> </div>}
-            {data.testimonials.quote3 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote3}"</p><p className="text-center mt-12"> ~{data.testimonials.name3}~</p></div>}
-            {data.testimonials.quote4 &&<div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote4}"</p><p className="text-center mt-12"> ~{data.testimonials.name4}~</p></div>}
-            {data.testimonials.quote5 &&<div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote5}"</p><p className="text-center mt-12"> ~{data.testimonials.name5}~</p> </div>}
-            {data.testimonials.quote6 &&<div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote6}"</p><p className="text-center mt-12"> ~{data.testimonials.name6}~</p></div>}
-            {data.testimonials.quote7 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote7}"</p><p className="text-center mt-12"> ~{data.testimonials.name7}~</p></div>}
-            {data.testimonials.quote8 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote8}"</p><p className="text-center mt-12"> ~{data.testimonials.name8}~</p> </div>}
-            {data.testimonials.quote9 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote9}"</p><p className="text-center mt-12"> ~{data.testimonials.name9}~</p></div>}
-            {data.testimonials.quote10 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote10}"</p><p className="text-center mt-12"> ~{data.testimonials.name10}~</p></div>}
-            {data.testimonials.quote11 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote11}"</p><p className="text-center mt-12"> ~{data.testimonials.name11}~</p> </div>}
-            {data.testimonials.quote12 &&<div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote12}"</p><p className="text-center mt-12"> ~{data.testimonials.name12}~</p></div>}
-            {data.testimonials.quote13 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote13}"</p><p className="text-center mt-12"> ~{data.testimonials.name13}~</p></div>}
-            {data.testimonials.quote14 && <div className="bg-tan/20 p-4 text-white/80"> <p >"{data.testimonials.quote14}"</p><p className="text-center mt-12"> ~{data.testimonials.name14}~</p> </div>}
-            {data.testimonials.quote15 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote15}"</p><p className="text-center mt-12"> ~{data.testimonials.name15}~</p></div>}
-            {data.testimonials.quote16 && <div className="bg-tan/20 p-4 text-white/80"><p >"{data.testimonials.quote16}"</p><p className="text-center mt-12"> ~{data.testimonials.name16}~</p></div>}   
-        </div>
-        
- 
-      
-  </Layout>
+            {data.testimonials.quote && <div className="bg-darktan/30 my-auto p-4 text-white/80"> <p>" {data.testimonials.quote} "</p><p className="text-center mt-8">~ {data.testimonials.name} ~</p></div>}
+            {data.testimonials.quote2 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >" {data.testimonials.quote2} "</p><p className="text-center mt-12"> ~{data.testimonials.name2} ~</p> </div>}
+            {data.testimonials.quote3 && <div className="bg-darktan p-4 text-white/80 my-auto"><p >"{data.testimonials.quote3}"</p><p className="text-center mt-12"> ~{data.testimonials.name3}~</p></div>}
+            {data.testimonials.quote4 &&<div className="bg-darktan p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote4}"</p><p className="text-center mt-12"> ~{data.testimonials.name4}~</p></div>}
+           
+            {data.testimonials.quote6 &&<div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >"{data.testimonials.quote6}"</p><p className="text-center mt-12"> ~{data.testimonials.name6}~</p></div>}
+            {data.testimonials.quote5 &&<div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >"{data.testimonials.quote5}"</p><p className="text-center mt-12"> ~{data.testimonials.name5}~</p> </div>}
+            {data.testimonials.quote7 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote7}"</p><p className="text-center mt-12"> ~{data.testimonials.name7}~</p></div>}
+            {data.testimonials.quote8 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote8}"</p><p className="text-center mt-12"> ~{data.testimonials.name8}~</p> </div>}
+            {data.testimonials.quote9 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote9}"</p><p className="text-center mt-12"> ~{data.testimonials.name9}~</p></div>}
+            {data.testimonials.quote10 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote10}"</p><p className="text-center mt-12"> ~{data.testimonials.name10}~</p></div>}
+            {data.testimonials.quote11 && <div className="bg-darktan p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote11}"</p><p className="text-center mt-12"> ~{data.testimonials.name11}~</p> </div>}
+            {data.testimonials.quote12 &&<div className="bg-darktan p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote12}"</p><p className="text-center mt-12"> ~{data.testimonials.name12}~</p></div>}
+            {data.testimonials.quote13 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote13}"</p><p className="text-center mt-12"> ~{data.testimonials.name13}~</p></div>}
+            {data.testimonials.quote14 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"> <p >"{data.testimonials.quote14}"</p><p className="text-center mt-12"> ~{data.testimonials.name14}~</p> </div>}
+            {data.testimonials.quote15 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >"{data.testimonials.quote15}"</p><p className="text-center mt-12"> ~{data.testimonials.name15}~</p></div>}
+            {data.testimonials.quote16 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >"{data.testimonials.quote16}"</p><p className="text-center mt-12"> ~{data.testimonials.name16}~</p></div>}   
+        </div>      
+    </Layout>
 )
               }
 

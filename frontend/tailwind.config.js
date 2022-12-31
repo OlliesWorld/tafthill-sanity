@@ -11,8 +11,8 @@ module.exports = {
       black: '#000',
       white: '#fff',
       green: '#1b2911',
-      tan: '#d2d2c6d9',
-      darktan: '#6b6b44',
+      tan: '#eaddcf',
+      darktan: '#716040',
 
       // ...
     },

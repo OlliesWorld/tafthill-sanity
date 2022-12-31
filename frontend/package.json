@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Roni",
   "dependencies": {
-    "@portabletext/react": "2.0.0",
+    "@portabletext/react": "^2.0.0",
     "gatsby": "5.2.0",
     "gatsby-plugin-image": "3.2.0",
     "gatsby-plugin-manifest": "5.2.0",

@@ -13,6 +13,21 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import {PortableText} from '@portabletext/react'
+
+
+const components = {
+    block: {
+      // Ex. 1: customizing common block types
+      h1: ({children}) => <h1 className="text-5xl text-white">{children}</h1>,
+      blockquote: ({children}) => <blockquote className="border-l-purple-500">{children}</blockquote>,
+      normal: ({children}) => <p className="text-2xl text-green ">{children}</p>,
+      // Ex. 2: rendering custom styles
+      customHeading: ({children}) => (
+        <h2 className="text-lg text-primary text-purple-700">{children}</h2>
+      ),
+    },
+  }
 
 
 
@@ -36,10 +51,10 @@ const IndexPage = ({data}) => (
       ))}
     </Swiper>
     
-      <div className="lg:w-3/4 bg-tan mx-auto p-8">
-        <h3 className="text-darktan text-2xl">{data.home.subtitle}</h3>
+      <div className="lg:w-3/4 bg-darktan mx-auto p-8">
+        <h3 className="text-tan  text-2xl">{data.home.subtitle}</h3>
         <h2 className="text-green text-5xl text-center mb-4">{data.home.title}</h2>
-        <p className="text-green text-2xl">{data.home.body}</p> 
+        <PortableText  value={data.home._rawBody} components={components} />
       </div>
      
       <div className="m-auto text-center">
@@ -56,7 +71,7 @@ export const query = graphql`
     home: sanityHome(_type: {eq: "home"}) {
     title
     subtitle
-    body 
+   _rawBody
     mainImage {
       asset {
         filename

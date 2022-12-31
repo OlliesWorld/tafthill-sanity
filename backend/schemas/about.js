@@ -1,6 +1,6 @@
 import { BsPeopleFill as icon } from 'react-icons/bs';
 
-export default {
+export default{
     name: 'about',
     type: 'document',
       title: 'About',
@@ -26,10 +26,9 @@ export default {
         },
  
         {
-          name: 'article1',
-          title: 'Article1',
-          type: 'text',
-        
+          name: 'body',
+          title: 'Body',
+          type: 'blockContent',
         },
         {
             name: 'title2',
@@ -41,11 +40,10 @@ export default {
             title: 'SubTitle2',
             type: 'string',
           },
-        {
-            name: 'article2',
-            title: 'Article2',
-            type: 'text',
-          
+         {
+            name: 'body2',
+            title: 'Body2',
+            type: 'blockContent',
           },
           {
               name: 'gallery',
