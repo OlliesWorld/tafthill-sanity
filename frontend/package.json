@@ -5,18 +5,19 @@
   "version": "0.1.0",
   "author": "Roni",
   "dependencies": {
-    "@portabletext/react": "^2.0.0",
+    "@portabletext/react": "2.0.0",
     "gatsby": "5.2.0",
     "gatsby-plugin-image": "3.2.0",
     "gatsby-plugin-manifest": "5.2.0",
     "gatsby-plugin-sharp": "5.2.0",
     "gatsby-source-filesystem": "5.2.0",
-    "gatsby-source-sanity": "7.6.0",
+    "gatsby-source-sanity": "7.6.2",
     "gatsby-transformer-sharp": "5.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.40.0",
-    "swiper": "8.4.5"
+    "swiper": "8.4.5",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "^4.0.5",
