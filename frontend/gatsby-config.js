@@ -48,7 +48,7 @@ module.exports = {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: "production",
         token: process.env.MY_SANITY_TOKEN,
-        
+        graphqlTag: 'default',
       },
     },
   ],

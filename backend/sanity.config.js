@@ -8,6 +8,7 @@ import { dashboardTool,
 import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
 import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
 
+
 export default defineConfig({
   name: 'default',
   title: 'taft-hill',
@@ -42,7 +43,7 @@ export default defineConfig({
       ]
       }), 
     deskTool(), visionTool({
-    defaultApiVersion: 'v2021-10-21',
+    defaultApiVersion: 'v2023-01-20',
     defaultDataset: 'production',
   })],
 
