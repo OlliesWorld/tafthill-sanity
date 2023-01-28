@@ -10,7 +10,7 @@ return (
  
   <Layout>
      <Seo title="Testimonials" />
-        <div className="w-3/4 m-auto grid grid-cols-2 gap-8 mb-12 text-xl">
+        <div className="w-3/4 m-auto grid md:grid-cols-2 gap-8 mb-12 text-xl">
             {data.testimonials.quote && <div className="bg-darktan/30 my-auto p-4 text-white/80"> <p>" {data.testimonials.quote} "</p><p className="text-center mt-8">~ {data.testimonials.name} ~</p></div>}
             {data.testimonials.quote2 && <div className="bg-darktan/30 p-4 text-white/80 my-auto"><p >" {data.testimonials.quote2} "</p><p className="text-center mt-12"> ~{data.testimonials.name2} ~</p> </div>}
             {data.testimonials.quote3 && <div className="bg-darktan p-4 text-white/80 my-auto"><p >"{data.testimonials.quote3}"</p><p className="text-center mt-12"> ~{data.testimonials.name3}~</p></div>}
