@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .fun {
+    border-radius: 53% 47% 70% 30% / 30% 30% 70% 70% ;
+} */
+/* .fun {
+    --mask: linear-gradient(#000 0 0) center/calc(100% - 60px) calc(100% - 60px)
+        no-repeat,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 0 0/60px
+        30px space no-repeat,
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 0
+        100%/60px 30px space no-repeat,
+      conic-gradient(from 45deg at left, #0000, #000 1deg 89deg, #0000 90deg) 0 0/30px
+        60px no-repeat space,
+      conic-gradient(from -135deg at right, #0000, #000 1deg 89deg, #0000 90deg)
+        100% 0/30px 60px no-repeat space;
+  
+    display: inline-block;
+    width: 350px;
+    aspect-ratio: 1;
+    background: linear-gradient(
+      135deg,
+      #1f005c,
+      #5b0060,
+      #870160,
+      #ac255e,
+      #ca485c,
+      #e16b5c,
+      #f39060,
+      #ffb56b
+    );
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  } */
+  @media (min-width: 900px){
+  .fun {
+    --color: #716040; /* the border color */
+    --border: 10px;   /* the border thickness*/
+    --offset: 20px;   /* control the offset*/
+    --gap: 5px;       /* the gap on hover */
+    
+    --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
+    --_o: calc(3*var(--offset));
+    padding: 
+      calc(var(--gap) + var(--border))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border) + var(--offset))
+      calc(var(--gap) + var(--border));
+    background: 
+      linear-gradient(      var(--_c)) var(--_o) var(--_o), 
+      linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+    background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+    background-repeat: no-repeat;
+    filter: grayscale(.4);
+    transition: .5s;
+    cursor: pointer;
+  }
+  .fun:hover {
+    background-position: 0px 0px;
+    background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+    filter: grayscale(0);
+    background-color: #716040;
+  }
+}

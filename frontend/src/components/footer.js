@@ -13,7 +13,7 @@ export default function Footer() {
         <p className="text-xs pt-2 m-0">&copy; {new Date().getFullYear()}  Taft Hill Acres</p>
         <p className="mt-0 text-sm ">Made with <span role="img" >💙</span> by<a href="https://roni.rocks/" target="/"> Roni</a></p>
       </div>
-      <div className="mx-auto mt-8 bg-tan/70 p-4 rounded">
+      <div className="fun mx-auto mt-8 bg-tan/70 p-4 ">
             <StaticImage src="../images/Logo-THA.png" alt="Taft Hill Acres"  width={300}
                 quality={95}
                 formats={["AUTO", "WEBP", "AVIF"]}

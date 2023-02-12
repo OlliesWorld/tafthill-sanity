@@ -5,47 +5,25 @@ import {schemaTypes} from './schemas'
 import { dashboardTool, 
   projectUsersWidget,
   projectInfoWidget} from "@sanity/dashboard";
-import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
-import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
-
+  import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
 
 export default defineConfig({
   name: 'default',
-  title: 'taft-hill',
+  title: 'studio',
 
-  projectId: import.meta.env.SANITY_STUDIO_PROJECTID,
+  // projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
+  projectId: 'g22q29ty',
   dataset: 'production',
 
   plugins: [
     dashboardTool({ 
-      widgets: [ 
-        documentListWidget({title: 'Last edited page', order: '_updatedAt desc'}),
-        projectInfoWidget(),
-        projectUsersWidget(),
-        netlifyWidget({
-          title: 'My Netlify deploys',
-          sites: [
-            {
-              title: 'Sanity Studio',
-              apiId: import.meta.env.SANITY_STUDIO_APIID,
-              buildHookId: import.meta.env.SANITY_STUDIO_BUILDHOOK,
-              name: 'tafthill-studio',
-            },
-            {
-              title: 'Taft Hill',
-              apiId: import.meta.env.SANITY_STUDIO_APIID,
-              buildHookId: import.meta.env.SANITY_STUDIO_BUILDHOOK,
-              name: 'tafthill-studio',
-              url: import.meta.env.SANITY_STUDIO_BUILDHOOK,
-            }
-          ]
-      })
-      ]
-      }), 
-    deskTool(), visionTool({
-    defaultApiVersion: 'v2023-01-20',
-    defaultDataset: 'production',
-  })],
+    widgets: [ 
+      documentListWidget({title: 'Last edited page', order: '_updatedAt desc'}),
+      projectInfoWidget(),
+      projectUsersWidget(),
+      
+    ]
+    }), deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
