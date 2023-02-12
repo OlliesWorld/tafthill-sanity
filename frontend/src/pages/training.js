@@ -34,15 +34,17 @@ const TrainingPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Training" />
-      <section className="md:w-3/4 text-center m-auto mb-12">
-        <h4 className="bg-darktan text-2xl p-4">{data.training.description}</h4>
+      <section className="md:w-1/2 text-center m-auto mb-12">
+        {data.training.description && 
+          <h4 className="bg-darktan text-tan text-2xl p-4">{data.training.description}</h4>}
         <GatsbyImage
           image={data.training.mainImage.asset.gatsbyImageData}
           alt="about image"
         />
       </section>
-     {data.training.trainer && <section className="m-auto text-center md:w-3/4 mb-12">
-        <div className=" bg-darktan p-4">
+     {data.training.trainer && 
+      <section className="m-auto text-center md:w-1/2 mb-12">
+        <div className="md:w-1/2  bg-darktan p-4">
           <h3 className="text-white  text-2xl text-left">
             {data.training.subtitle}
           </h3>
@@ -55,15 +57,16 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer}
         />
 
-        <div className="px-4 md:px-0 text-tan text-left lg:text-center mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody}
             components={components}
           />
         </div>
       </section>}
-     {data.training.trainer2 && <section className="m-auto text-center md:w-3/4 mb-12">
-        <div className=" bg-darktan p-4">
+      {data.training.trainer2 && 
+      <section className="m-auto text-center md:w-1/2 mb-12">
+        <div className="md:w-1/2  bg-darktan p-4">
           <h3 className="text-white  text-2xl text-left">
             {data.training.subtitle2}
           </h3>
@@ -76,15 +79,16 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer2}
         />
 
-        <div className="px-4 md:px-0  text-tan text-left lg:text-center mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody2}
             components={components}
           />
         </div>
       </section>}
-     {data.training.trainer3 && <section className="px-4 md:px-0 m-auto text-center md:w-3/4 mb-12">
-        <div className=" bg-darktan p-4">
+      {data.training.trainer3 && 
+      <section className="m-auto text-center md:w-1/2 mb-12">
+        <div className="md:w-1/2  bg-darktan p-4">
           <h3 className="text-white  text-2xl text-left">
             {data.training.subtitle3}
           </h3>
@@ -97,7 +101,7 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer3}
         />
 
-        <div className=" text-tan text-left lg:text-center mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody3}
             components={components}
