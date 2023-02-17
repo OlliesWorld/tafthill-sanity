@@ -2,17 +2,8 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Pagination, A11y, Autoplay, EffectFade } from 'swiper';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 import {PortableText} from '@portabletext/react'
 
 
@@ -35,31 +26,34 @@ const IndexPage = ({data}) => (
  
   <Layout>
      <Seo title="Home" />
-     <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto mb-8">
-     <Swiper
-      modules={[ Pagination, A11y, Autoplay, EffectFade]}
-      spaceBetween={5}
-      slidesPerView={1}
-      autoplay
-      effect="fade"
-      pagination={{ clickable: true }}
-    >
-       {data.home.gallery.map((img) => (
-        <SwiperSlide key={img.asset.assetId} >
-            <GatsbyImage image={img.asset.gatsbyImageData} alt={img.asset.filename} className="object-cover max-h-[30rem] lg:w-3/4 m-auto"/>
-            </SwiperSlide>
-      ))}
-    </Swiper>
-    
-      <div className="lg:w-3/4 bg-darktan mx-auto p-8">
-        <h3 className="text-tan  text-2xl">{data.home.subtitle}</h3>
-        <h2 className="text-green text-5xl text-center mb-4">{data.home.title}</h2>
-        <PortableText  value={data.home._rawBody} components={components} />
-      </div>
-     
-      <div className="m-auto text-center">
-       <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
+     <div className="text-center h-full  m-auto mb-8">
+        <p className="w-3/5 bg-tan text-2xl font-light p-6 m-auto">{data.home.title}</p>
+        <div className="w-2/3 m-auto text-center">
+          <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="z-10 object-cover w-5/6 m-auto"/>
+          <div className="w-5/6 my-12  m-auto  flex justify-center">
+          <p className=" w-1/4 border-r-2 border-darktan/50 pr-8">{data.home.blurb}</p>
+          <p className="w-1/4 text-left pl-12">{data.home.blurb2}</p>
+          </div>
         </div>
+      <section className="w-full bg-tan mx-auto p-8">
+        <div className="w-2/3 m-auto">
+          <h3 className="text-black  text-2xl">{data.home.subtitle2}</h3>
+          <h2 className="text-black text-5xl text-center mb-12">{data.home.title2}</h2>
+          
+          <div className="flex justify-center text-left">
+          <div className="w-1/2 p-4 border-r-2"><PortableText  value={data.home._rawBody} components={components} /></div>
+          <div className="w-1/2 py-4 pl-8"> <PortableText  value={data.home._rawBody2} components={components} /></div>
+          </div>
+        </div>
+      </section>
+      <section className="w-2/3 m-auto mt-24 masonry sm:masonry-sm md:masonry-md">
+        <Link className="bg-tan text-darktan m-auto p-12" to={data.home.button}>{data.home.button}</Link>
+        <GatsbyImage class="mt-16" image={data.home.mason.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename}  />
+        <GatsbyImage className="mb-4" image={data.home.mason2.asset.gatsbyImageData} alt={data.home.mason2.asset.filename} />
+        <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className=""/>
+        <GatsbyImage image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.filename} className="mb-16"/>
+        <Link className="bg-tan text-darktan m-auto p-12 " to={data.home.button2}>{data.home.button2}</Link>
+      </section>
    </div>
   </Layout>
 )
@@ -71,16 +65,40 @@ export const query = graphql`
     home: sanityHome(_type: {eq: "home"}) {
     title
     subtitle
+    blurb
+    blurb2
+    subtitle2
+    title2
    _rawBody
-    mainImage {
+   _rawBody2
+   mason{
       asset {
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
-    gallery {
+   mason2{
       asset {
-        assetId
+        filename
+        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
+      }
+    }
+   mason3{
+      asset {
+        filename
+        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
+      }
+    }
+   mason4{
+      asset {
+        filename
+        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
+      }
+    }
+   button
+   button2
+    mainImage {
+      asset {
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }

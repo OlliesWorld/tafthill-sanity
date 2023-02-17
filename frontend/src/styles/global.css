@@ -2,65 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .fun {
-    border-radius: 53% 47% 70% 30% / 30% 30% 70% 70% ;
-} */
-/* .fun {
-    --mask: linear-gradient(#000 0 0) center/calc(100% - 60px) calc(100% - 60px)
-        no-repeat,
-      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 0 0/60px
-        30px space no-repeat,
-      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 0
-        100%/60px 30px space no-repeat,
-      conic-gradient(from 45deg at left, #0000, #000 1deg 89deg, #0000 90deg) 0 0/30px
-        60px no-repeat space,
-      conic-gradient(from -135deg at right, #0000, #000 1deg 89deg, #0000 90deg)
-        100% 0/30px 60px no-repeat space;
-  
-    display: inline-block;
-    width: 350px;
-    aspect-ratio: 1;
-    background: linear-gradient(
-      135deg,
-      #1f005c,
-      #5b0060,
-      #870160,
-      #ac255e,
-      #ca485c,
-      #e16b5c,
-      #f39060,
-      #ffb56b
-    );
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-  } */
-  @media (min-width: 900px){
-  .fun {
-    --color: #716040; /* the border color */
-    --border: 10px;   /* the border thickness*/
-    --offset: 20px;   /* control the offset*/
-    --gap: 5px;       /* the gap on hover */
-    
-    --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
-    --_o: calc(3*var(--offset));
-    padding: 
-      calc(var(--gap) + var(--border))
-      calc(var(--gap) + var(--border) + var(--offset))
-      calc(var(--gap) + var(--border) + var(--offset))
-      calc(var(--gap) + var(--border));
-    background: 
-      linear-gradient(      var(--_c)) var(--_o) var(--_o), 
-      linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
-    background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
-    background-repeat: no-repeat;
-    filter: grayscale(.4);
-    transition: .5s;
-    cursor: pointer;
+@layer utilities {
+  @variants responsive {
+      .masonry {
+          column-gap: 1em;
+          column-count: 1;
+      }
+      .masonry-sm {
+          column-gap: 1em;
+          column-count: 2;
+      }
+      .masonry-md {
+          column-gap: 1em;
+          column-count: 3;
+      }
+      .break-inside {
+          break-inside: avoid;
+      }
+
   }
-  .fun:hover {
-    background-position: 0px 0px;
-    background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
-    filter: grayscale(0);
-    background-color: #716040;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;700&display=swap');
+@layer base {
+  html {
+    font-family: 'Cormorant', serif;
   }
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  right: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 100;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: rgba(236,235,232,1);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
 }

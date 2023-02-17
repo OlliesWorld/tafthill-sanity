@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      black: '#000',
-      white: '#fff',
+      black: 'rgba(45,42,42,1);',
+      white: 'rgba(255,255,255,1)',
       green: '#1b2911',
-      tan: '#eaddcf',
-      darktan: '#716040',
+      tan: 'rgba(236,235,232,1)',
+      darktan: 'rgba(145,96,51,1)',
 
       // ...
     },

@@ -8,12 +8,13 @@ export default defineType({
     icon: HomeIcon,
     fields: [    
       defineField({
-        name: 'gallery',
-        title: 'Gallery',
-        type: 'array',
-        of: [{type: 'image'}]
-    }),   
-      
+        name: 'mainImage',
+        title: 'Main image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
     defineField({
         name: 'title',
         title: 'Title',
@@ -24,19 +25,79 @@ export default defineType({
         title: 'SubTitle',
         type: 'string',
       }),
-     
+      defineField({
+        name: 'blurb',
+        title: 'Blurb',
+        type: 'string',
+      }),
+      defineField({
+        name: 'blurb2',
+        title: 'blurb2',
+        type: 'string',
+      }),
+      defineField({
+        name: 'subtitle2',
+        title: 'Subtitle2',
+        type: 'string',
+      }),
+      defineField({
+        name: 'title2',
+        title: 'Title2',
+        type: 'string',
+      }),
       defineField({
         name: 'body',
         title: 'Body',
         type: 'blockContent',
       }),
       defineField({
-        name: 'mainImage',
-        title: 'Main image',
+        name: 'body2',
+        title: 'Body2',
+        type: 'blockContent',
+      }),
+      defineField({
+        title: "Button",
+        name: "button",
+        type: "text",
+        
+      }),
+      defineField({
+        name: 'mason',
+        title: 'Mason',
         type: 'image',
         options: {
           hotspot: true,
         },
+      }),
+      defineField({
+        name: 'mason2',
+        title: 'Mason2',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
+      defineField({
+        name: 'mason3',
+        title: 'Mason3',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
+      defineField({
+        name: 'mason4',
+        title: 'Mason4',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      }),
+      defineField({
+        title: "Button2",
+        name: "button2",
+        type: "text",
+        
       }),
       defineField({
         name: 'slug',
