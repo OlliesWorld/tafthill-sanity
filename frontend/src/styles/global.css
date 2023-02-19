@@ -32,7 +32,7 @@
 #menu__toggle {
   opacity: 0;
 }
-/* #menu__toggle:checked + .menu__btn > span {
+#menu__toggle:checked + .menu__btn > span {
   transform: rotate(45deg);
 }
 #menu__toggle:checked + .menu__btn > span::before {
@@ -45,7 +45,7 @@
 }
 #menu__toggle:checked ~ .menu__box {
   right: 0 !important;
-} */
+}
 .menu__btn {
   position: fixed;
   top: 50px;
@@ -100,31 +100,4 @@
 }
 .menu__item:hover {
   background-color: #CFD8DC;
-}
-
-/* SEVEN */
-.hamburger .line{
-  width: 50px;
-  height: 5px;
-  background-color: #ecf0f1;
-  display: block;
-  margin: 8px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-#menu-toggle.is-active .line:nth-child(1){
-  width: 30px;
-}
-
-#menu-toggle.is-active .line:nth-child(2){
-  width: 40px;
-}
-
-#menu-toggle.is-active .line{
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
 }
