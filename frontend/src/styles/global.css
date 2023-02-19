@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
-/* @tailwind utilities; */
+@tailwind utilities;
 
-@layer components {
-  @variants responsive {
+@layer utilities {
+  
       .masonry {
           column-gap: 1em;
           column-count: 1;
@@ -21,7 +21,6 @@
           break-inside: avoid;
       }
 
-  }
 }
 
 @layer base {
