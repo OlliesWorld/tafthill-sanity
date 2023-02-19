@@ -10,7 +10,7 @@ export default function Footer() {
           <p className='uppercase '>Follow us</p>
               <div className='ml-40 lg:m-auto'><a href='https://www.facebook.com/TaftHillAcres/?ref=hl' aria-label="Head to Facebook to find out more" ><svg className="h-8 w-8 text-darktan"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a></div>
         </div>
-        <div className="w-full lg:w-1/3 p-6 lg:mt-20 lg:mr-8 h-auto">
+        <div className="w-full lg:w-1/3 p-6 lg:mt-16 lg:mr-8 h-auto">
         
           <h3 className="text-md justify-center text-xl">Fort Collins Horse Boarding Facility</h3>
           <p>We love all things animals, so Taft Hill Acres was the perfect addition to our family.</p>

@@ -15,7 +15,7 @@ return (
      <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage.asset.gatsbyImageData} alt="about image"/>
         </div>
-        <div className="w-5/6 lg:w-1/2 text-tan text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
+        <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
                 <p>{data.facility.article[0]}</p>
                 <p>{data.facility.article[1]}</p>
                 <p>{data.facility.article[2]}</p>
@@ -25,7 +25,7 @@ return (
         <GatsbyImage image={data.facility.mainImage2.asset.gatsbyImageData} alt="about image"/>
       </div>
       
-       <div className="w-5/6 lg:w-1/2 text-tan text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
+       <div className="w-5/6 lg:w-1/2 text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
   
           <p>{data.facility.article2[0]}</p>
           <p>{data.facility.article2[1]}</p>
@@ -35,7 +35,7 @@ return (
       <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage3.asset.gatsbyImageData} alt="about image"/>
       </div>
-      <div className="w-5/6 lg:w-1/2 text-tan text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
+      <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
   
         <p>{data.facility.article3[0]}</p>
         <p>{data.facility.article3[1]}</p>

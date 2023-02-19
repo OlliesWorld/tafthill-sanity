@@ -57,7 +57,7 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer}
         />
 
-        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0  text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody}
             components={components}
@@ -79,7 +79,7 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer2}
         />
 
-        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0  text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody2}
             components={components}
@@ -101,7 +101,7 @@ const TrainingPage = ({ data }) => {
           alt={data.training.trainer3}
         />
 
-        <div className="px-4 md:px-0 text-tan text-left  mt-6 text-xl md:text-2xl ">
+        <div className="px-4 md:px-0  text-left  mt-6 text-xl md:text-2xl ">
           <PortableText
             value={data.training._rawBody3}
             components={components}

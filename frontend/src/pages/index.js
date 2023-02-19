@@ -47,15 +47,18 @@ const IndexPage = ({data}) => (
         </div>
       </section>
       <section className="w-2/3 m-auto mt-24 masonry sm:masonry-sm md:masonry-md">
-        <Link className="bg-tan text-darktan mt-24 px-12 py-4 text-2xl" to={data.home.buttoninternalLink}>{data.home.button}</Link>
-        <div className="h-1/4">
+        <div>
+          <Link className="w-3/4 bg-tan text-darktan mt-24 px-12 py-4 text-2xl" to={data.home.buttoninternalLink}>{data.home.button}</Link>
+        </div>
+        <div className="">
           <GatsbyImage class="mt-16 mb-4 lg:mb-0" image={data.home.mason.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename}  />
         </div>
         <GatsbyImage className="mb-4" image={data.home.mason2.asset.gatsbyImageData} alt={data.home.mason2.asset.filename} />
+          
         <GatsbyImage className="mb-4 lg:mb-0" image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.filename} />
         <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className="mb-16"/>
-        
         <Link className="bg-tan text-darktan m-auto px-8 py-4 text-xl " to={data.home.button2internalLink}>{data.home.button2}</Link>
+      
       </section>
    </div>
   </Layout>

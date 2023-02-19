@@ -11,10 +11,10 @@ return (
   <Layout>
      <Seo title="Contact us" />
      <div className="mb-12">
-       <h2 className="text-darktan text-3xl text-center">Send us a message</h2>
+       <h2 className="text-darktan text-3xl text-center font-bold">Send us a message</h2>
      <div className="lg:w-2/3 container grid lg:grid-cols-2 m-auto">
        <Form />
-        <div className="col-span-1 bg-darktan text-white/80 lg:h-8/12  p-6 text-xl my-8">
+        <div className="col-span-1 bg-tan  lg:h-8/12  p-6 text-xl my-8">
           <p>We are conveniently located within 2 miles of CSU, and Old Town. There is direct access to the Poudre Trail and close access to Lory State Park and Reservoir Ridge.</p>
           <div className="text-3xl text-center mt-12">
             <p>1012 N Taft Hill Rd</p>

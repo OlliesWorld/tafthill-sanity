@@ -6,6 +6,7 @@ import { dashboardTool,
   projectUsersWidget,
   projectInfoWidget} from "@sanity/dashboard";
   import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
+  import {media, mediaAssetSource} from 'sanity-plugin-media'
 
 export default defineConfig({
   name: 'default',
@@ -23,8 +24,15 @@ export default defineConfig({
       projectUsersWidget(),
       
     ]
-    }), deskTool(), visionTool()],
-
+    }), deskTool(), visionTool(), media()],
+    form: {
+      // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
+      file: {
+        assetSources: previousAssetSources => {
+          return previousAssetSources.filter(assetSource => assetSource !== mediaAssetSource)
+        }
+      }
+    },
   schema: {
     types: schemaTypes,
   },
