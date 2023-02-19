@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +24,6 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;700&display=swap');
 @layer base {
   html {
     font-family: 'Cormorant', serif;
@@ -49,7 +49,7 @@
 .menu__btn {
   position: fixed;
   top: 40px;
-  right: 40px;
+  right: 25px;
   width: 26px;
   height: 26px;
   cursor: pointer;

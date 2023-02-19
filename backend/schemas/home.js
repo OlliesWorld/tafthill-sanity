@@ -55,12 +55,19 @@ export default defineType({
         title: 'Body2',
         type: 'blockContent',
       }),
+      
       defineField({
         title: "Button",
         name: "button",
         type: "text",
         
       }),
+      {
+        name: "buttoninternalLink",
+        type: "text",
+        title: "Button Link",
+        description: "Link to what page",
+      },
       defineField({
         name: 'mason',
         title: 'Mason',
@@ -94,11 +101,17 @@ export default defineType({
         },
       }),
       defineField({
-        title: "Button2",
+        title: "Button2 Text",
         name: "button2",
         type: "text",
         
       }),
+      {
+        name: "button2internalLink",
+        type: "text",
+        description: "Link to what page",
+        title: "Button2 Link",
+      },
       defineField({
         name: 'slug',
         title: 'Slug',
