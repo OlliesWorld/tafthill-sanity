@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { PortableText } from "@portabletext/react"
 
@@ -20,9 +20,9 @@ const components = {
   },
   marks: {
     link: ({children, value}) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+      // const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       return (
-        <a className="text-darktan mt-4 hover:underline" href={value.href} rel={rel}>
+        <a className="text-darktan mt-4 hover:underline" href={value.href} rel='noreferrer noopener'>
           {children}
         </a>
       )
@@ -30,10 +30,23 @@ const components = {
   },
 }
 
+
 const TrainingPage = ({ data }) => {
+  const idTrainer = data.training.trainer.toLowerCase().replaceAll(' ', '-');
+  const idLink = '#' + idTrainer
+  const idTrainer2 = data.training.trainer2.toLowerCase().replaceAll(' ', '-');
+  const idLink2 = '#' + idTrainer2
+  const idTrainer3 = data.training.trainer3.toLowerCase().replaceAll(' ', '-');
+  const idLink3 = '#' + idTrainer3
+ 
   return (
     <Layout>
       <Seo title="Training" />
+      <section className=" w-1/2 m-auto mb-12">
+        <Link className="text-darktan text-2xl font-extrabold ml-12 mr-12 hover:border-b-2" to={idLink}>{data.training.trainer}</Link>
+        <Link className="text-darktan text-2xl font-extrabold mr-12 hover:border-b-2" to={idLink2}>{data.training.trainer2}</Link>
+        <Link className="text-darktan text-2xl font-extrabold hover:border-b-2" to={idLink3}>{data.training.trainer3}</Link>
+      </section>
       <section className="md:w-1/2 text-center m-auto mb-12">
         {data.training.description && 
           <h4 className="bg-darktan text-tan text-2xl p-4">{data.training.description}</h4>}
@@ -42,13 +55,14 @@ const TrainingPage = ({ data }) => {
           alt="about image"
         />
       </section>
+      
      {data.training.trainer && 
-      <section className="m-auto text-center md:w-1/2 mb-12">
-        <div className="md:w-1/2  bg-darktan p-4">
-          <h3 className="text-white  text-2xl text-left">
+      <section id={idTrainer} className='m-auto text-center md:w-1/2 mb-12 '>
+        <div className="md:w-2/3  bg-darktan p-4">
+          <h3 className="text-white mb-4 text-2xl text-left">
             {data.training.subtitle}
           </h3>
-          <h2 className="text-green text-5xl text-center mb-4">
+          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
             {data.training.trainer}
           </h2>
         </div>
@@ -65,12 +79,12 @@ const TrainingPage = ({ data }) => {
         </div>
       </section>}
       {data.training.trainer2 && 
-      <section className="m-auto text-center md:w-1/2 mb-12">
-        <div className="md:w-1/2  bg-darktan p-4">
-          <h3 className="text-white  text-2xl text-left">
+      <section id={idTrainer2} className="m-auto text-center md:w-1/2 mb-12">
+        <div className="md:w-2/3   bg-darktan p-4">
+          <h3 className="text-white mb-4 text-2xl text-left">
             {data.training.subtitle2}
           </h3>
-          <h2 className="text-green text-5xl text-center mb-4">
+          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
             {data.training.trainer2}
           </h2>
         </div>
@@ -87,12 +101,12 @@ const TrainingPage = ({ data }) => {
         </div>
       </section>}
       {data.training.trainer3 && 
-      <section className="m-auto text-center md:w-1/2 mb-12">
-        <div className="md:w-1/2  bg-darktan p-4">
-          <h3 className="text-white  text-2xl text-left">
+      <section id={idTrainer3} className="m-auto text-center md:w-1/2 mb-12">
+        <div className="md:w-2/3   bg-darktan p-4">
+          <h3 className="text-white mb-4 text-2xl text-left">
             {data.training.subtitle3}
           </h3>
-          <h2 className="text-green text-5xl text-center mb-4">
+          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
             {data.training.trainer3}
           </h2>
         </div>
