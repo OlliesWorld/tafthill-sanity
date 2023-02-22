@@ -142,11 +142,11 @@ export const query = graphql`
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
         }
       }
-      # trainerImage3 {
-      #   asset {
-      #     gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
-      #   }
-      # }
+      trainerImage3 {
+        asset {
+          gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
+        }
+      }
     }
   }
 `

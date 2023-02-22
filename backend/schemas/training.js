@@ -68,7 +68,7 @@ export default defineType({
           }),
            
           defineField({
-            name: 'mainImage3',
+            name: 'trainerImage3',
             title: 'Trainer image3',
             type: 'image',
             options: {
