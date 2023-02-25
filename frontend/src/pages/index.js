@@ -48,7 +48,7 @@ const IndexPage = ({data}) => (
       </section>
       <section className="w-2/3 m-auto mt-24 masonry sm:masonry-sm md:masonry-md">
         <div className="mt-8">
-          <Link className="w-3/4 bg-tan text-darktan mt-24 px-12 py-4 lg:text-2xl" to={data.home.buttoninternalLink}>{data.home.button}</Link>
+          <Link className="w-3/4 bg-tan text-darktan mt-24 p-4 lg:text-2xl" to={data.home.buttoninternalLink}>{data.home.button}</Link>
         </div>
         <div className="">
           <GatsbyImage class="mt-8 mb-4 lg:mb-0" image={data.home.mason.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename}  />
@@ -57,7 +57,7 @@ const IndexPage = ({data}) => (
           
         <GatsbyImage className="mb-4 lg:mb-0" image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.filename} />
         <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className="mb-8 mt-8"/>
-        <Link className="w-3/4 bg-tan text-darktan mt-12 px-12 py-4 lg:text-2xl" to={data.home.button2internalLink}>{data.home.button2}</Link>
+        <Link className="w-3/4 bg-tan text-darktan mt-12 p-4 lg:text-2xl" to={data.home.button2internalLink}>{data.home.button2}</Link>
       
       </section>
    </div>
