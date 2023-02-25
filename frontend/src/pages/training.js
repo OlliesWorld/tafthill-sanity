@@ -59,10 +59,10 @@ const TrainingPage = ({ data }) => {
      {data.training.trainer && 
       <section id={idTrainer} className='m-auto text-center md:w-1/2 mb-12 '>
         <div className="md:w-2/3  bg-darktan p-4">
-          <h3 className="text-white mb-4 text-2xl text-left">
+          <h3 className="text-white mb-4 lg:text-2xl text-left">
             {data.training.subtitle}
           </h3>
-          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
+          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
             {data.training.trainer}
           </h2>
         </div>
@@ -81,10 +81,10 @@ const TrainingPage = ({ data }) => {
       {data.training.trainer2 && 
       <section id={idTrainer2} className="m-auto text-center md:w-1/2 mb-12">
         <div className="md:w-2/3   bg-darktan p-4">
-          <h3 className="text-white mb-4 text-2xl text-left">
+          <h3 className="text-white mb-4 lg:text-2xl text-left">
             {data.training.subtitle2}
           </h3>
-          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
+          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
             {data.training.trainer2}
           </h2>
         </div>
@@ -103,10 +103,10 @@ const TrainingPage = ({ data }) => {
       {data.training.trainer3 && 
       <section id={idTrainer3} className="m-auto text-center md:w-1/2 mb-12">
         <div className="md:w-2/3   bg-darktan p-4">
-          <h3 className="text-white mb-4 text-2xl text-left">
+          <h3 className="text-white mb-4  lg:text-2xl text-left">
             {data.training.subtitle3}
           </h3>
-          <h2 className="text-green text-6xl font-extrabold text-center mb-4">
+          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
             {data.training.trainer3}
           </h2>
         </div>
