@@ -31,8 +31,8 @@ const IndexPage = ({data}) => (
         <div className="w-full lg:w-3/5 m-auto text-center">
           <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="z-10 object-cover w-full lg:w-5/6 m-auto"/>
           <div className="w-full lg:w-5/6 my-12  m-auto  lg:flex justify-center">
-          <p className="w-full lg:w-1/4 border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 pr-8">{data.home.blurb}</p>
-          <p className="w-full lg:w-1/4 text-center mt-2 lg:text-left lg:pl-12">{data.home.blurb2}</p>
+          <p className="w-full lg:w-1/4 text-center border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 pr-8">{data.home.blurb}</p>
+          <p className="w-full lg:w-1/4 text-center mt-2 lg:text-left lg:pl-12 ">{data.home.blurb2}</p>
           </div>
         </div>
       <section className="w-full bg-tan mx-auto py-8 lg:p-8">
@@ -56,7 +56,7 @@ const IndexPage = ({data}) => (
         <GatsbyImage className="mb-4" image={data.home.mason2.asset.gatsbyImageData} alt={data.home.mason2.asset.filename} />
           
         <GatsbyImage className="mb-4 lg:mb-0" image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.filename} />
-        <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className="mb-8 mt-8"/>
+        <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className="mb-8 lg:mt-8"/>
         <Link className="w-3/4 bg-tan text-darktan mt-12 p-4 lg:text-2xl" to={data.home.button2internalLink}>{data.home.button2}</Link>
       
       </section>
