@@ -31,12 +31,12 @@ return (
         <GatsbyImage image={data.sanityAbout.mainImage.asset.gatsbyImageData} alt="about image"className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
         </div>
         <div className="lg:w-3/4 bg-darktan mx-auto p-4 lg:p-12">
-        <h3 className="text-left text-white text-2xl">{data.sanityAbout.subtitle}</h3>
+        <h3 className="text-left text-black font-bold text-2xl">{data.sanityAbout.subtitle}</h3>
         <h2 className="text-green text-5xl text-center mb-4">{data.sanityAbout.title}</h2>
         <PortableText  value={data.sanityAbout._rawBody} components={components} />
       </div>
       <div className="lg:w-3/4 bg-darktan mx-auto my-8 p-4 lg:p-12">
-        <h3 className="text-left text-white text-2xl">{data.sanityAbout.subtitle2}</h3>
+        <h3 className="text-left text-black font-bold text-2xl">{data.sanityAbout.subtitle2}</h3>
         <h2 className="text-green text-5xl text-center mb-4">{data.sanityAbout.title2}</h2>
         <PortableText  value={data.sanityAbout._rawBody2} components={components} />
       </div>

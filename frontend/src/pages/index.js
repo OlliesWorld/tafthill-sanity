@@ -32,7 +32,7 @@ const IndexPage = ({data}) => (
           <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="z-10 object-cover w-full lg:w-5/6 m-auto"/>
           <div className="w-full lg:w-5/6 my-12  m-auto  lg:flex justify-center">
           <p className="w-full lg:w-1/4 text-center border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 pr-8">{data.home.blurb}</p>
-          <p className="w-full lg:w-1/4 text-center mt-2 lg:text-left lg:pl-12 ">{data.home.blurb2}</p>
+          <p className="w-full lg:w-1/4 text-center mt-2  lg:pl-12 ">{data.home.blurb2}</p>
           </div>
         </div>
       <section className="w-full bg-tan mx-auto py-8 lg:p-8">
