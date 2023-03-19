@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
+        projectId: process.env.SANITY_STUDIO_PROJECT_ID,
         dataset: "production",
         token: process.env.MY_SANITY_TOKEN,
         graphqlTag: 'default',
