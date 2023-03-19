@@ -42,14 +42,14 @@ const TrainingPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Training" />
-      <section className="grid md:grid-cols-3 justify-content-center ml-4  md:ml-12 lg:w-1/2 md:m-auto md:mb-4">
+      <section className="grid md:grid-cols-3 justify-content-center ml-4  md:ml-12 lg:w-1/2 lg:m-auto md:mb-4">
         <Link className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2" to={idLink}>{data.training.trainer}</Link>
         <Link className="text-darktan text-2xl font-extrabold mr-12 hover:border-b-2 md:text-center" to={idLink2}>{data.training.trainer2}</Link>
         <Link className="text-darktan text-2xl font-extrabold hover:border-b-2 md:text-center" to={idLink3}>{data.training.trainer3}</Link>
       </section>
       <section className="lg:w-1/2 text-center m-auto mb-12">
         {data.training.description && 
-          <h4 className=" bg-darktan text-tan text-2xl px-4 py-8">{data.training.description}</h4>}
+          <h4 className=" bg-darktan text-tan text-4xl px-4 py-8">{data.training.description}</h4>}
         <GatsbyImage
           image={data.training.mainImage.asset.gatsbyImageData}
           alt="about image"
