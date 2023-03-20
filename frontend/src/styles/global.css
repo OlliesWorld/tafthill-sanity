@@ -22,7 +22,10 @@
       }
 
 }
-
+.masonry2{
+  grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) ); /* [2] Make columns adjust according to the available viewport */
+  grid-auto-rows: 250px;
+}
 @layer base {
   html {
     font-family: 'Cormorant', serif;

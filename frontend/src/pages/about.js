@@ -40,10 +40,14 @@ return (
         <h2 className="text-green text-5xl text-center mb-4">{data.sanityAbout.title2}</h2>
         <PortableText  value={data.sanityAbout._rawBody2} components={components} />
       </div>
-        <div className="w-3/4 m-auto masonry sm:masonry-sm md:masonry-md">
-                    {gallery.map((item) => (
-                        <div className="m-4" key={item.asset.id} >
-                          <GatsbyImage  image={item.asset.gatsbyImageData} alt={item.asset.filename}/>
+        <div className=" lg:columns-3 sm:columns-2 gap-4">
+                    {gallery.map((item, index) => (
+                        <div className="py-2 px-1 inline-block w-full group"  key={item.asset.id} >
+                           
+       
+                          <GatsbyImage   image={item.asset.gatsbyImageData} alt={item.asset.filename}/>
+                      
+                        
                         </div>
                     ))}             
         </div>
@@ -64,7 +68,7 @@ export const query = graphql`
       asset {
         id
         filename
-        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
+        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850 )
       }
     }
     title2
@@ -74,7 +78,7 @@ export const query = graphql`
       asset {
         id
         filename
-        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 500)
+        gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 500, height: 400)
       }
     }
   }
