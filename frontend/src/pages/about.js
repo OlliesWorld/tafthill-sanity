@@ -28,7 +28,7 @@ return (
      <Seo title="About" />
      <div className="text-center  h-full w-full md:h-3/4 md:w-3/4 m-auto mb-8">
       <div className="m-auto text-center">
-        <GatsbyImage image={data.sanityAbout.mainImage.asset.gatsbyImageData} alt="about image"className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
+        <GatsbyImage image={data.sanityAbout.mainImage.asset.gatsbyImageData} alt={data.sanityAbout.mainImage.asset.altText} className="object-cover max-h-[32rem] lg:w-3/4 m-auto"/>
         </div>
         <div className="lg:w-3/4 bg-darktan mx-auto p-4 lg:p-12">
         <h3 className="text-left text-black font-bold text-2xl">{data.sanityAbout.subtitle}</h3>
@@ -45,7 +45,7 @@ return (
                         <div className="py-2 px-1 inline-block w-full group"  key={item.asset.id} >
                            
        
-                          <GatsbyImage   image={item.asset.gatsbyImageData} alt={item.asset.filename}/>
+                          <GatsbyImage   image={item.asset.gatsbyImageData} alt={item.asset.altText}/>
                       
                         
                         </div>
@@ -66,6 +66,7 @@ export const query = graphql`
     _rawBody
     mainImage {
       asset {
+        altText
         id
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850 )
@@ -76,6 +77,7 @@ export const query = graphql`
     _rawBody2
     gallery {
       asset {
+        altText
         id
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 500, height: 400)

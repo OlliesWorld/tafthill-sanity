@@ -32,14 +32,16 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Taft Hill Acres`,
-        short_name: `taft`,
+        short_name: `Taft Hill Acres`,
+        description: `Fort Collins Horse Boarding Facility`,
         start_url: `/`,
-        background_color: `#1b2911`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#fffff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/tafthorse.svg`, // This path is relative to the root of the site.
+        icon: `src/images/tafthorse.svg`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     {

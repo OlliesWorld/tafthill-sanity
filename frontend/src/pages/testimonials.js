@@ -24,11 +24,11 @@ return (
                 <p >" {data.testimonials.quote2} "</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name2} ~</p>
                 </div>
-                <GatsbyImage image={data.testimonials.image2.asset.gatsbyImageData} alt={data.testimonials.image2.asset.filename} className="lg:h-96  lg:ml-4"/>
+                <GatsbyImage image={data.testimonials.image2.asset.gatsbyImageData} alt={data.testimonials.image2.asset.altText} className="lg:h-96  lg:ml-4"/>
              
               </div>}
             {data.testimonials.quote3 && <div className="lg:flex mb-12 ">
-            <GatsbyImage image={data.testimonials.image3.asset.gatsbyImageData} alt={data.testimonials.image3.asset.filename} className="lg:h-96  lg:mr-4"/>
+            <GatsbyImage image={data.testimonials.image3.asset.gatsbyImageData} alt={data.testimonials.image3.asset.altText} className="lg:h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p >"{data.testimonials.quote3}"</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name3}~</p>
@@ -39,11 +39,11 @@ return (
               <p >"{data.testimonials.quote4}"</p>
               <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name4}~</p>
             </div>
-            <GatsbyImage image={data.testimonials.image4.asset.gatsbyImageData} alt={data.testimonials.image4.asset.filename} className="lg:h-96  lg:ml-4"/>
+            <GatsbyImage image={data.testimonials.image4.asset.gatsbyImageData} alt={data.testimonials.image4.asset.altText} className="lg:h-96  lg:ml-4"/>
             </div>}
            
             {data.testimonials.quote5 && <div className="lg:flex mb-12 ">
-              <GatsbyImage image={data.testimonials.image5.asset.gatsbyImageData} alt={data.testimonials.image5.asset.filename} className="h-96  lg:mr-4"/>
+              <GatsbyImage image={data.testimonials.image5.asset.gatsbyImageData} alt={data.testimonials.image5.asset.altText} className="h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p>" {data.testimonials.quote5} "</p>
                 <p className="font-bold text-darktan text-center mt-8">~ {data.testimonials.name5} ~</p>
@@ -55,11 +55,11 @@ return (
                 <p >" {data.testimonials.quote6} "</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name6} ~</p>
                 </div>
-                <GatsbyImage image={data.testimonials.image6.asset.gatsbyImageData} alt={data.testimonials.image6.asset.filename} className="lg:h-96  lg:ml-4"/>
+                <GatsbyImage image={data.testimonials.image6.asset.gatsbyImageData} alt={data.testimonials.image6.asset.altText} className="lg:h-96  lg:ml-4"/>
              
               </div>}
             {data.testimonials.quote7 && <div className="lg:flex mb-12 ">
-            <GatsbyImage image={data.testimonials.image7.asset.gatsbyImageData} alt={data.testimonials.image7.asset.filename} className="lg:h-96  lg:mr-4"/>
+            <GatsbyImage image={data.testimonials.image7.asset.gatsbyImageData} alt={data.testimonials.image7.asset.altText} className="lg:h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p >"{data.testimonials.quote7}"</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name7}~</p>
@@ -70,17 +70,17 @@ return (
               <p >"{data.testimonials.quote8}"</p>
               <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name8}~</p>
             </div>
-            <GatsbyImage image={data.testimonials.image8.asset.gatsbyImageData} alt={data.testimonials.image8.asset.filename} className="lg:h-96  lg:ml-4"/>
+            <GatsbyImage image={data.testimonials.image8.asset.gatsbyImageData} alt={data.testimonials.image8.asset.altText} className="lg:h-96  lg:ml-4"/>
             </div>}
             {data.testimonials.quote9 && <div  className="lg:flex mb-12 "> 
             <div className="lg:w-2/3 bg-tan my-auto p-8">
               <p >"{data.testimonials.quote9}"</p>
               <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name9}~</p>
             </div>
-            <GatsbyImage image={data.testimonials.image9.asset.gatsbyImageData} alt={data.testimonials.image9.asset.filename} className="lg:h-96  lg:ml-4"/>
+            <GatsbyImage image={data.testimonials.image9.asset.gatsbyImageData} alt={data.testimonials.image9.asset.altText} className="lg:h-96  lg:ml-4"/>
             </div>}
             {data.testimonials.quote10 && <div className="lg:flex mb-12 ">
-              <GatsbyImage image={data.testimonials.image10.asset.gatsbyImageData} alt={data.testimonials.image10.asset.filename} className="h-96  lg:mr-4"/>
+              <GatsbyImage image={data.testimonials.image10.asset.gatsbyImageData} alt={data.testimonials.image10.asset.altText} className="h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p>" {data.testimonials.quote10} "</p>
                 <p className="font-bold text-darktan text-center mt-8">~ {data.testimonials.name10} ~</p>
@@ -92,11 +92,11 @@ return (
                 <p >" {data.testimonials.quote11} "</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name11} ~</p>
                 </div>
-                <GatsbyImage image={data.testimonials.image11.asset.gatsbyImageData} alt={data.testimonials.image11.asset.filename} className="lg:h-96  lg:ml-4"/>
+                <GatsbyImage image={data.testimonials.image11.asset.gatsbyImageData} alt={data.testimonials.image11.asset.altText} className="lg:h-96  lg:ml-4"/>
              
               </div>}
             {data.testimonials.quote12 && <div className="lg:flex mb-12 ">
-            <GatsbyImage image={data.testimonials.image12.asset.gatsbyImageData} alt={data.testimonials.image12.asset.filename} className="lg:h-96  lg:mr-4"/>
+            <GatsbyImage image={data.testimonials.image12.asset.gatsbyImageData} alt={data.testimonials.image12.asset.altText} className="lg:h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p >"{data.testimonials.quote12}"</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name12}~</p>
@@ -107,10 +107,10 @@ return (
               <p >"{data.testimonials.quote13}"</p>
               <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name13}~</p>
             </div>
-            <GatsbyImage image={data.testimonials.image13.asset.gatsbyImageData} alt={data.testimonials.image13.asset.filename} className="lg:h-96  lg:ml-4"/>
+            <GatsbyImage image={data.testimonials.image13.asset.gatsbyImageData} alt={data.testimonials.image13.asset.altText} className="lg:h-96  lg:ml-4"/>
             </div>}
             {data.testimonials.quote14 && <div className="lg:flex mb-12 ">
-            <GatsbyImage image={data.testimonials.image14.asset.gatsbyImageData} alt={data.testimonials.image14.asset.filename} className="lg:h-96  lg:mr-4"/>
+            <GatsbyImage image={data.testimonials.image14.asset.gatsbyImageData} alt={data.testimonials.image14.asset.altText} className="lg:h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p >"{data.testimonials.quote14}"</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name14}~</p>
@@ -122,10 +122,10 @@ return (
               <p >"{data.testimonials.quote15}"</p>
               <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name15}~</p>
             </div>
-            <GatsbyImage image={data.testimonials.image15.asset.gatsbyImageData} alt={data.testimonials.image15.asset.filename} className="lg:h-96  lg:ml-4"/>
+            <GatsbyImage image={data.testimonials.image15.asset.gatsbyImageData} alt={data.testimonials.image15.asset.altText} className="lg:h-96  lg:ml-4"/>
             </div>}
             {data.testimonials.quote16 && <div className="lg:flex mb-12 ">
-            <GatsbyImage image={data.testimonials.image16.asset.gatsbyImageData} alt={data.testimonials.image16.asset.filename} className="lg:h-96  lg:mr-4"/>
+            <GatsbyImage image={data.testimonials.image16.asset.gatsbyImageData} alt={data.testimonials.image16.asset.altText} className="lg:h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
                 <p >"{data.testimonials.quote16}"</p>
                 <p className="text-darktan font-bold text-center mt-12"> ~{data.testimonials.name16}~</p>
@@ -177,96 +177,112 @@ export const query = graphql`
     quote9
     image1{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image2 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image3 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image4 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image5 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image6 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image7 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image8 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image9{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image10 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image11 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image12 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image13{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image14 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 400)
       }
     }
     image15 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
     image16 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }

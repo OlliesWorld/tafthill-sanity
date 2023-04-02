@@ -29,7 +29,7 @@ const IndexPage = ({data}) => (
      <div className="text-center h-full  m-auto mb-8">
         <p className="w-full lg:w-1/2 bg-tan text-2xl font-light p-6 m-auto">{data.home.title}</p>
         <div className="w-full lg:w-3/5 m-auto text-center">
-          <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename} className="z-10 object-cover w-full lg:w-5/6 m-auto"/>
+          <GatsbyImage image={data.home.mainImage.asset.gatsbyImageData} alt={data.home.mainImage.asset.altText} className="z-10 object-cover w-full lg:w-5/6 m-auto"/>
           <div className="w-full lg:w-5/6 my-12  m-auto  lg:flex justify-center">
           <p className="w-full lg:w-1/4 text-center border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 pr-8">{data.home.blurb}</p>
           <p className="w-full lg:w-1/4 text-center mt-2  lg:pl-12 ">{data.home.blurb2}</p>
@@ -48,16 +48,16 @@ const IndexPage = ({data}) => (
       </section>
       <section className="w-2/3 m-auto mt-24 masonry sm:masonry-sm md:masonry-md">
         <div className="mt-8">
-          <Link className="w-3/4 bg-tan text-darktan mt-24 p-4 lg:text-2xl" to={data.home.buttoninternalLink}>{data.home.button}</Link>
+          <Link className="w-3/4 bg-tan text-darktan mt-24 p-4 lg:text-2xl font-extrabold" to={data.home.buttoninternalLink}>{data.home.button}</Link>
         </div>
         <div className="">
-          <GatsbyImage class="mt-8 mb-4 lg:mb-0" image={data.home.mason.asset.gatsbyImageData} alt={data.home.mainImage.asset.filename}  />
+          <GatsbyImage class="mt-8 mb-4 lg:mb-0" image={data.home.mason.asset.gatsbyImageData} alt={data.home.mainImage.asset.altText}  />
         </div>
-        <GatsbyImage className="mb-4" image={data.home.mason2.asset.gatsbyImageData} alt={data.home.mason2.asset.filename} />
+        <GatsbyImage className="mb-4" image={data.home.mason2.asset.gatsbyImageData} alt={data.home.mason2.asset.altText} />
           
-        <GatsbyImage className="mb-4 lg:mb-0" image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.filename} />
-        <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.filename} className="mb-8 lg:mt-8"/>
-        <Link className="w-3/4 bg-tan text-darktan mt-12 p-4 lg:text-2xl" to={data.home.button2internalLink}>{data.home.button2}</Link>
+        <GatsbyImage className="mb-4 lg:mb-0" image={data.home.mason4.asset.gatsbyImageData} alt={data.home.mason4.asset.altText} />
+        <GatsbyImage image={data.home.mason3.asset.gatsbyImageData} alt={data.home.mason3.asset.altText} className="mb-8 lg:mt-8"/>
+        <Link className="w-3/4 bg-tan text-darktan mt-12 p-4 lg:text-2xl font-extrabold" to={data.home.button2internalLink}>{data.home.button2}</Link>
       
       </section>
    </div>
@@ -79,24 +79,28 @@ export const query = graphql`
    _rawBody2
    mason{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
    mason2{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
    mason3{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
     }
    mason4{
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }
@@ -107,6 +111,7 @@ export const query = graphql`
    button2internalLink
     mainImage {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 850)
       }

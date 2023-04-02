@@ -13,7 +13,7 @@ return (
      <Seo title="Facility" />
      <h2 className="text-darktan text-5xl text-center mb-8">{data.facility.title}</h2>
      <div className="m-auto text-center">
-        <GatsbyImage image={data.facility.mainImage.asset.gatsbyImageData} alt="about image"/>
+        <GatsbyImage image={data.facility.mainImage.asset.gatsbyImageData} alt={data.facility.mainImage.asset.altText}/>
         </div>
         <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
                 <p>{data.facility.article[0]}</p>
@@ -22,7 +22,7 @@ return (
                 <p>{data.facility.article[3]}</p>
       </div> 
       <div className="m-auto text-center">
-        <GatsbyImage image={data.facility.mainImage2.asset.gatsbyImageData} alt="about image"/>
+        <GatsbyImage image={data.facility.mainImage2.asset.gatsbyImageData}  alt={data.facility.mainImage2.asset.altText}/>
       </div>
       
        <div className="w-5/6 lg:w-1/2 text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
@@ -33,7 +33,7 @@ return (
           <p>{data.facility.article2[3]}</p>
       </div> 
       <div className="m-auto text-center">
-        <GatsbyImage image={data.facility.mainImage3.asset.gatsbyImageData} alt="about image"/>
+        <GatsbyImage image={data.facility.mainImage3.asset.gatsbyImageData}  alt={data.facility.mainImage3.asset.altText}/>
       </div>
       <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
   
@@ -43,7 +43,7 @@ return (
         <p>{data.facility.article3[3]}</p>
       </div> 
       <div className="m-auto text-center">
-        <GatsbyImage image={data.facility.mainImage4.asset.gatsbyImageData} alt="about image"/>
+        <GatsbyImage image={data.facility.mainImage4.asset.gatsbyImageData}  alt={data.facility.mainImage4.asset.altText}/>
       </div>
   </Layout>
 )
@@ -57,6 +57,7 @@ export const query = graphql`
     title
     mainImage {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
       }
@@ -64,6 +65,7 @@ export const query = graphql`
     article
     mainImage2 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
       }
@@ -71,6 +73,7 @@ export const query = graphql`
     article2
     mainImage3 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
       }
@@ -78,6 +81,7 @@ export const query = graphql`
     article3
     mainImage4 {
       asset {
+        altText
         filename
         gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
       }

@@ -43,10 +43,13 @@ const ContactForm = (props) => {
     <form data-netlify="true" action="/" name="contactUs" method="post" onSubmit={handleSubmit} className="w-full">
      {/* <label htmlFor="nameInput" className="text-4xl text-dark-tan mb-2 w-full font-bold">Send us a Message</label> */}
       <input type="hidden" name="form-name" value="contact-form" />
-  
-        <input className='p-2 mb-2 w-3/4 md:w-96 text-black border-b-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' name="Name" type="text" onChange={handleChange} required placeholder="Name"  />
-        <input className='p-2 mb-2 w-3/4 md:w-96 text-black border-b-2  border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' type='email' placeholder='Email' name='email' onChange={handleChange} required />
-        <textarea className='w-3/4 md:w-96 text-black border-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' placeholder='Message' name='message' rows='8' minLength="8" onChange={handleChange} required />
+        
+        <p><label className="hidden" htmlFor="name">Name:</label>
+        <input id="name" className='p-2 mb-2 w-3/4 md:w-96 text-black border-b-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' name="Name" type="text" onChange={handleChange} required placeholder="Name"  /></p>
+        <p><label className="hidden" htmlFor="email">Email:</label>
+        <input id="email" className='p-2 mb-2 w-3/4 md:w-96 text-black border-b-2  border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' type='email' placeholder='Email' name='email' onChange={handleChange} required /></p>
+        <p><label className="hidden" htmlFor="message">Message:</label>
+        <textarea id="message" className='w-3/4 md:w-96 text-black border-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' placeholder='Message' name='message' rows='8' minLength="8" onChange={handleChange} required /></p>
         <button className='bg-darktan text-white p-2 mt-4  hover:bg-tan hover:text-black hover:border-darktan border-2' type='submit' >Contact Us</button>
             
 

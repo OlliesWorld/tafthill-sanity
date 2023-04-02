@@ -41,7 +41,7 @@ const TrainingPage = ({ data }) => {
  
   return (
     <Layout>
-      <Seo title="Training" />
+      <Seo title="Training at Taft Hill Acres | Fort Collins Boarding Facility" />
       <section className="grid md:grid-cols-3 justify-content-center ml-4  md:ml-12 lg:w-1/2 lg:m-auto md:mb-4">
         <Link className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2" to={idLink}>{data.training.trainer}</Link>
         <Link className="text-darktan text-2xl font-extrabold mr-12 hover:border-b-2 md:text-center" to={idLink2}>{data.training.trainer2}</Link>
@@ -52,7 +52,7 @@ const TrainingPage = ({ data }) => {
           <h4 className=" bg-darktan text-tan text-4xl px-4 py-8">{data.training.description}</h4>}
         <GatsbyImage
           image={data.training.mainImage.asset.gatsbyImageData}
-          alt="about image"
+          alt={data.training.mainImage.asset.altText}
         />
       </section>
       
@@ -68,7 +68,7 @@ const TrainingPage = ({ data }) => {
         </div>
         <GatsbyImage
           image={data.training.trainerImage.asset.gatsbyImageData}
-          alt={data.training.trainer}
+          alt={data.training.trainerImage.asset.altText}
         />
 
         <div className="px-4 lg:px-0   text-left  mt-6 text-xl md:text-2xl ">
@@ -90,7 +90,7 @@ const TrainingPage = ({ data }) => {
         </div>
         <GatsbyImage
           image={data.training.trainerImage2.asset.gatsbyImageData}
-          alt={data.training.trainer2}
+          alt={data.training.trainerImage2.asset.altText}
         />
 
         <div className="px-4 lg:px-0  text-left  mt-6 text-xl md:text-2xl ">
@@ -112,7 +112,7 @@ const TrainingPage = ({ data }) => {
         </div>
         <GatsbyImage
           image={data.training.trainerImage3.asset.gatsbyImageData}
-          alt={data.training.trainer3}
+          alt={data.training.trainerImage3.asset.altText}
         />
 
         <div className="px-4 lg:px-0  text-left  mt-6 text-xl md:text-2xl ">
@@ -143,21 +143,25 @@ export const query = graphql`
       _rawBody3
       mainImage {
         asset {
+          altText
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
         }
       }
       trainerImage {
         asset {
+          altText
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 614)
         }
       }
       trainerImage2 {
         asset {
+          altText
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
         }
       }
       trainerImage3 {
         asset {
+          altText
           gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
         }
       }
