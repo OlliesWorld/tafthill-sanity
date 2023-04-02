@@ -35,7 +35,7 @@ module.exports = {
         short_name: `Taft Hill Acres`,
         description: `Fort Collins Horse Boarding Facility`,
         start_url: `/`,
-        background_color: `#fffff`,
+        background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/images/tafthorse.svg`,
