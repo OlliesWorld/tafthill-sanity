@@ -9,7 +9,7 @@ const components = {
   block: {
     // Ex. 1: customizing common block types
     h1: ({ children }) => <h1 className=" text-2xl text-white">{children}</h1>,
-  
+
     blockquote: ({ children }) => (
       <blockquote className="text-green border-l-green">{children}</blockquote>
     ),
@@ -19,10 +19,14 @@ const components = {
     ),
   },
   marks: {
-    link: ({children, value}) => {
+    link: ({ children, value }) => {
       // const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       return (
-        <a className="text-darktan mt-4 hover:underline" href={value.href} rel='noreferrer noopener'>
+        <a
+          className="text-darktan mt-4 hover:underline"
+          href={value.href}
+          rel="noreferrer noopener"
+        >
           {children}
         </a>
       )
@@ -30,98 +34,54 @@ const components = {
   },
 }
 
-
 const TrainingPage = ({ data }) => {
-  const idTrainer = data.training.trainer.toLowerCase().replaceAll(' ', '-');
-  const idLink = '#' + idTrainer
-  const idTrainer2 = data.training.trainer2.toLowerCase().replaceAll(' ', '-');
-  const idLink2 = '#' + idTrainer2
-  const idTrainer3 = data.training.trainer3.toLowerCase().replaceAll(' ', '-');
-  const idLink3 = '#' + idTrainer3
- 
+  const description = data.sanityTrainingDescription
   return (
     <Layout>
       <Seo title="Training at Taft Hill Acres | Fort Collins Boarding Facility" />
-      <section className="grid md:grid-cols-3 justify-content-center ml-4  md:ml-12 lg:w-1/2 lg:m-auto md:mb-4">
-        <Link className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2" to={idLink}>{data.training.trainer}</Link>
-        <Link className="text-darktan text-2xl font-extrabold mr-12 hover:border-b-2 md:text-center" to={idLink2}>{data.training.trainer2}</Link>
-        <Link className="text-darktan text-2xl font-extrabold hover:border-b-2 md:text-center" to={idLink3}>{data.training.trainer3}</Link>
+      <section className="m-auto text-center lg:w-1/2 mb-6">
+        {data.training.nodes.map(item => (
+          <Link
+            className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2"
+            to={item.idLink}
+          >
+            {item.trainer}
+          </Link>
+        ))}
       </section>
-      <section className="lg:w-1/2 text-center m-auto mb-12">
-        {data.training.description && 
-          <h4 className=" bg-darktan text-tan text-4xl px-4 py-8">{data.training.description}</h4>}
+      <section className="lg:w-1/2 text-center m-auto mb-16">
+        {description && (
+          <h4 className=" bg-darktan text-tan text-4xl px-4 py-8">
+            {description.description}
+          </h4>
+        )}
         <GatsbyImage
-          image={data.training.mainImage.asset.gatsbyImageData}
-          alt={data.training.mainImage.asset.altText}
+          className="m-auto"
+          image={description.mainImage.asset.gatsbyImageData}
+          alt={description.mainImage.asset.altText}
         />
       </section>
-      
-     {data.training.trainer && 
-      <section id={idTrainer} className='m-auto text-center lg:w-1/2 mb-12'>
-        <div className="md:w-2/3  bg-darktan p-4">
-          <h3 className="text-white mb-4 md:text-2xl text-left">
-            {data.training.subtitle}
-          </h3>
-          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
-            {data.training.trainer}
-          </h2>
-        </div>
-        <GatsbyImage
-          image={data.training.trainerImage.asset.gatsbyImageData}
-          alt={data.training.trainerImage.asset.altText}
-        />
 
-        <div className="px-4 lg:px-0   text-left  mt-6 text-xl md:text-2xl ">
-          <PortableText
-            value={data.training._rawBody}
-            components={components}
+      {data.training.nodes.map(trainer => (
+        <section key={trainer.id} className="m-auto text-center lg:w-1/2 mb-16">
+          <div className="md:w-2/3  bg-darktan p-4">
+            <h3 className="text-white mb-4 md:text-2xl text-left">
+              {trainer.subtitle}
+            </h3>
+            <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
+              {trainer.trainer}
+            </h2>
+          </div>
+          <GatsbyImage
+            image={trainer.trainerImage.asset.gatsbyImageData}
+            alt={trainer.trainerImage.asset.altText}
           />
-        </div>
-      </section>}
-      {data.training.trainer2 && 
-      <section id={idTrainer2} className="m-auto text-center lg:w-1/2 mb-12">
-        <div className="md:w-2/3   bg-darktan p-4">
-          <h3 className="text-white mb-4 text-2xl text-left">
-            {data.training.subtitle2}
-          </h3>
-          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
-            {data.training.trainer2}
-          </h2>
-        </div>
-        <GatsbyImage
-          image={data.training.trainerImage2.asset.gatsbyImageData}
-          alt={data.training.trainerImage2.asset.altText}
-        />
 
-        <div className="px-4 lg:px-0  text-left  mt-6 text-xl md:text-2xl ">
-          <PortableText
-            value={data.training._rawBody2}
-            components={components}
-          />
-        </div>
-      </section>}
-      {data.training.trainer3 && 
-      <section id={idTrainer3} className="m-auto text-center lg:w-1/2 mb-12">
-        <div className="md:w-2/3   bg-darktan p-4">
-          <h3 className="text-white mb-4  text-2xl text-left">
-            {data.training.subtitle3}
-          </h3>
-          <h2 className="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
-            {data.training.trainer3}
-          </h2>
-        </div>
-        <GatsbyImage
-          image={data.training.trainerImage3.asset.gatsbyImageData}
-          alt={data.training.trainerImage3.asset.altText}
-        />
-
-        <div className="px-4 lg:px-0  text-left  mt-6 text-xl md:text-2xl ">
-          <PortableText
-            value={data.training._rawBody3}
-            components={components}
-          />
-        </div>
-      </section>}
+          <div className="px-4 lg:px-0   text-left  mt-6 text-xl md:text-2xl ">
+            <PortableText value={trainer._rawBody} components={components} />
+          </div>
+        </section>
+      ))}
     </Layout>
   )
 }
@@ -130,39 +90,35 @@ export default TrainingPage
 
 export const query = graphql`
   query TrainingQuery {
-    training: sanityTraining(_type: { eq: "training" }) {
+    sanityTrainingDescription {
       description
-      trainer2
-      trainer
-      trainer3
-      subtitle2
-      subtitle
-      subtitle3
-      _rawBody
-      _rawBody2
-      _rawBody3
       mainImage {
         asset {
           altText
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
+          gatsbyImageData(
+            width: 600
+            layout: FIXED
+            placeholder: BLURRED
+          )
         }
       }
-      trainerImage {
-        asset {
-          altText
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 614)
-        }
-      }
-      trainerImage2 {
-        asset {
-          altText
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
-        }
-      }
-      trainerImage3 {
-        asset {
-          altText
-          gatsbyImageData(layout:CONSTRAINED, placeholder: BLURRED, width: 600)
+    }
+    training: allSanityTraining {
+      nodes {
+        id
+        trainer
+        subtitle
+        _rawBody
+        trainerImage {
+          asset {
+            altText
+            gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              width: 614
+              height: 450
+            )
+          }
         }
       }
     }
