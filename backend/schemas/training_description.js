@@ -2,34 +2,24 @@ import { FaHorseHead as icon } from 'react-icons/fa';
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-    name: 'training',
+    name: 'training_description',
     type: 'document',
-      title: 'Training',
+      title: 'Training Description',
       icon,
       fields: [        
-          defineField({
-            name: 'trainerImage',
-            title: 'Trainer image',
+        defineField({
+            name: 'mainImage',
+            title: 'Main image',
             type: 'image',
             options: {
               hotspot: true,
             },
           }),
           defineField({
-          name: 'trainer',
-          title: 'Trainer',
-          type: 'string',
-        }),
-        defineField({
-          name: 'subtitle',
-          title: 'SubTitle',
-          type: 'string',
-        }),
-        defineField({
-          name: 'body',
-          title: 'Body',
-          type: 'blockContent',
-        }),
+            name: 'description',
+            title: 'Description',
+            type: 'string',
+          }),
           defineField({
           name: 'slug',
           title: 'Slug',

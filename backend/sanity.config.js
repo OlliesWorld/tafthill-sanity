@@ -7,25 +7,24 @@ import { dashboardTool,
   projectInfoWidget} from "@sanity/dashboard";
   import { documentListWidget } from "sanity-plugin-dashboard-widget-document-list";
   import {media, mediaAssetSource} from 'sanity-plugin-media'
-  import * as dotenv from 'dotenv'
-  
-  let projectId = import.meta.env?.SANITY_STUDIO_PROJECT_ID
-  let dataset = import.meta.env?.SANITY_STUDIO_DATASET
 
-  if (!projectId || !dataset ) {
-    dotenv.config({
-      path: `.env`,
-    })
-    projectId = process.env?.SANITY_STUDIO_PROJECT_ID
-    dataset = process.env?.SANITY_STUDIO_DATASET
-  }
+  
+  // let projectId = import.meta.env?.SANITY_STUDIO_PROJECT_ID
+  // let dataset = import.meta.env?.SANITY_STUDIO_DATASET
+
+  // if (!projectId || !dataset ) {
+  //   dotenv.config({
+  //     path: `.env`,
+  //   })
+  //   projectId = process.env?.SANITY_STUDIO_PROJECT_ID
+  //   dataset = process.env?.SANITY_STUDIO_DATASET
+  // }
 
   export default defineConfig({
   name: 'default',
   title: 'studio',
-
-  projectId,
-  dataset,
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET,
 
   plugins: [
     dashboardTool({ 
