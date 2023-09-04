@@ -39,7 +39,7 @@ const TrainingPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Training at Taft Hill Acres | Fort Collins Boarding Facility" />
-      <section className="m-auto text-center lg:w-1/2 mb-6">
+      <section className="flex justify-center m-auto text-center lg:w-1/2 mb-6">
         {data.training.nodes.map(item => (
           <Link
             className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2"

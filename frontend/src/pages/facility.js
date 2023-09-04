@@ -15,32 +15,32 @@ return (
      <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage.asset.gatsbyImageData} alt={data.facility.mainImage.asset.altText}/>
         </div>
-        <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
-                <p>{data.facility.article[0]}</p>
-                <p>{data.facility.article[1]}</p>
-                <p>{data.facility.article[2]}</p>
-                <p>{data.facility.article[3]}</p>
+        <div className="w-5/6 lg:w-1/2  text-center mx-auto my-8 text-xl md:text-4xl">    
+                <p className="leading-relaxed">{data.facility.article[0]}</p>
+                <p className="leading-relaxed">{data.facility.article[1]}</p>
+                <p className="leading-relaxed">{data.facility.article[2]}</p>
+                <p className="leading-relaxed">{data.facility.article[3]}</p>
       </div> 
       <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage2.asset.gatsbyImageData}  alt={data.facility.mainImage2.asset.altText}/>
       </div>
       
-       <div className="w-5/6 lg:w-1/2 text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
+       <div className="w-5/6 lg:w-1/2 text-center mx-auto  my-8 text-xl md:text-4xl">    
   
-          <p>{data.facility.article2[0]}</p>
-          <p>{data.facility.article2[1]}</p>
-          <p>{data.facility.article2[2]}</p>
-          <p>{data.facility.article2[3]}</p>
+          <p className="leading-relaxed">{data.facility.article2[0]}</p>
+          <p className="leading-relaxed">{data.facility.article2[1]}</p>
+          <p className="leading-relaxed">{data.facility.article2[2]}</p>
+          <p className="leading-relaxed">{data.facility.article2[3]}</p>
       </div> 
       <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage3.asset.gatsbyImageData}  alt={data.facility.mainImage3.asset.altText}/>
       </div>
-      <div className="w-5/6 lg:w-1/2  text-center m-auto p-8 mb-8 text-lg md:text-4xl">    
+      <div className="w-5/6 lg:w-1/2  text-center mx-auto my-8 text-xl md:text-4xl">    
   
-        <p>{data.facility.article3[0]}</p>
-        <p>{data.facility.article3[1]}</p>
-        <p>{data.facility.article3[2]}</p>
-        <p>{data.facility.article3[3]}</p>
+        <p className="leading-relaxed">{data.facility.article3[0]}</p>
+        <p className="leading-relaxed">{data.facility.article3[1]}</p>
+        <p className="leading-relaxed">{data.facility.article3[2]}</p>
+        <p className="leading-relaxed">{data.facility.article3[3]}</p>
       </div> 
       <div className="m-auto text-center">
         <GatsbyImage image={data.facility.mainImage4.asset.gatsbyImageData}  alt={data.facility.mainImage4.asset.altText}/>

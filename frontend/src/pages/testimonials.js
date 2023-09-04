@@ -11,6 +11,7 @@ return (
   <Layout>
      <Seo title="Testimonials" />
         <div className="lg:w-3/4 m-auto  gap-8 mb-12 text-xl">
+          <h1 className="text-darktan font-extrabold text-5xl text-center mb-8">Testimonials</h1>
             {data.testimonials.quote && <div className="lg:flex mb-12 ">
               <GatsbyImage image={data.testimonials.image1.asset.gatsbyImageData} alt={data.testimonials.image1.asset.filename} className="h-96  lg:mr-4"/>
               <div className="lg:w-2/3 bg-tan my-auto p-8">
