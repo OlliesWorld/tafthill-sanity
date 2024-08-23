@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { PortableText } from "@portabletext/react"
 
@@ -40,13 +40,14 @@ const TrainingPage = ({ data }) => {
     <Layout>
       <Seo title="Training at Taft Hill Acres | Fort Collins Boarding Facility" />
       <section className="flex justify-center m-auto text-center lg:w-1/2 mb-6">
+      {console.log(data)}
         {data.training.nodes.map(item => (
-          <Link
+          <a
             className="text-darktan text-2xl font-extrabold  mr-12 hover:border-b-2"
-            to={item.idLink}
+            href={'#' + item.trainer.toLowerCase().replace(/\s+/g, '-')}
           >
             {item.trainer}
-          </Link>
+          </a>
         ))}
       </section>
       <section className="lg:w-1/2 text-center m-auto mb-16">
@@ -58,12 +59,12 @@ const TrainingPage = ({ data }) => {
         <GatsbyImage
           className="m-auto"
           image={description.mainImage.asset.gatsbyImageData}
-          alt={description.mainImage.asset.altText}
+          alt="taft hill acres training facility"
         />
       </section>
 
       {data.training.nodes.map(trainer => (
-        <section key={trainer.id} className="m-auto text-center lg:w-1/2 mb-16">
+        <section key={trainer.id} className="m-auto text-center lg:w-1/2 mb-16" id={trainer.trainer.toLowerCase().replace(/\s+/g, '-')}>
           <div className="md:w-2/3  bg-darktan p-4">
             <h3 className="text-white mb-4 md:text-2xl text-left">
               {trainer.subtitle}
@@ -74,7 +75,7 @@ const TrainingPage = ({ data }) => {
           </div>
           <GatsbyImage
             image={trainer.trainerImage.asset.gatsbyImageData}
-            alt={trainer.trainerImage.asset.altText}
+            alt="taft hill acres trainer"
           />
 
           <div className="px-4 lg:px-0   text-left  mt-6 text-xl md:text-2xl ">
@@ -113,9 +114,8 @@ export const query = graphql`
           asset {
             altText
             gatsbyImageData(
-              layout: CONSTRAINED
               placeholder: BLURRED
-              width: 614
+              width: 450
               height: 450
             )
           }
