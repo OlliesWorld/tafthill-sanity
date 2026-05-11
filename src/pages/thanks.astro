@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import thanks from "../data/thanks.json";
+---
+
+<Layout title="Thank you from Taft Hill Acres | Fort Collins Boarding Facility">
+  <div class="container mx-auto mt-8">
+    <div class="bg-tan text-center p-8">
+      <h2 class="text-green text-5xl mb-4">{thanks.title}</h2>
+      <h3 class="text-darktan text-2xl">{thanks.subtitle}</h3>
+      {
+        thanks.mainImage && (
+          <img
+            src={thanks.mainImage}
+            alt={thanks.title}
+            width={800}
+            height={600}
+            class="lg:w-1/2 mx-auto"
+            decoding="async"
+            loading="eager"
+          />
+        )
+      }
+    </div>
+  </div>
+</Layout>

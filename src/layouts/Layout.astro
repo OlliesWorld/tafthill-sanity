@@ -1,0 +1,59 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+// import {VisualEditing} from '@sanity/astro/visual-editing'
+import { Image } from "astro:assets";
+import Logo from "../../public/images/taft-hill-acres-logo.png";
+
+const { title } = Astro.props;
+// const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == 'true'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body class="max-w-[1400px] mx-auto">
+    <div>
+      <Header />
+      <Image
+        src={Logo}
+        alt="Taft Hill Acres logo"
+        class="max-w-[550px] w-1/2 lg:w-1/3 m-auto"
+        loading={"eager"}
+      />
+      <main>
+        <slot />
+        <!-- <VisualEditing enabled={visualEditingEnabled} zIndex={1000} /> -->
+      </main>
+      <Footer />
+    </div>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("expanded");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

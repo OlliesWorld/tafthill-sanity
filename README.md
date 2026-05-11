@@ -1,45 +1,66 @@
 # Taft Hill Acres
-## General info
-This project is for Taft Hill Acres to feature their barn and services.
-Using Gatsby was the best option to be able to showcase tons of images of their beautiful facility.
-Updating both frameworks and what I have learned over the year
 
-## Technologies
-Project is created with:<br/>
-Gatsby </br>
-Sanity </br>
-Tailwind </br>
-Netlify
+Static marketing site for Taft Hill Acres horse boarding in Fort Collins.
 
-	
-## 🚀 Quick start
-1. **Clone project**
+## Project status
 
-2.  **Start developing.**
+This repo has been migrated to a static Astro architecture with local JSON content and local images.
 
-   
+## Current stack
 
-    ```shell
-    
-    npm run develop
-    ```
+- Astro 5
+- Tailwind CSS 3
+- Vite 8
+- Netlify (static hosting)
 
-### To-do
+## Legacy stack (before migration)
 
-- [x] Gatsby V5
-- [x] Sanity v3
-- [ ] PortableText in Gatsby
-- [ ] better image display carousel/grid
-- [ ] add blog option, but need portable working first
+Before the current setup, the project used:
 
-- [ ] Done!
+- Gatsby for the frontend framework
+- Sanity as the CMS/content source
+- Tailwind CSS for styling
+- Netlify for deployment
 
-### License
+The site has since moved away from CMS-driven content in favor of static, repo-managed content for simpler maintenance and faster builds.
+
+## Prerequisites
+
+- Node.js 24+
+- npm
+
+## Quick start
+
+1. Clone this project.
+2. Install dependencies.
+3. Start the development server.
+
+```bash
+npm install
+npm run dev
+```
+
+## Build and preview
+
+```bash
+npm run build
+npm run preview
+```
+
+## Common scripts
+
+- npm run dev: Start local development server
+- npm run build: Build CSS and generate production Astro build
+- npm run preview: Preview production build locally
+- npm run lint: Run ESLint
+- npm run clean: Remove dist output
+
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
 
-## 🚀 About Roni
+## About Roni
 
-Checkout my [Roni's Portfolio](https://www.roni.rocks):
+Portfolio: [Roni's Portfolio](https://www.roni.rocks)
 
 

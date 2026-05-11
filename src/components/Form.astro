@@ -1,0 +1,25 @@
+<div class="block p-6 max-w-md m-auto text-center my-4">
+  <div class="feedback-form">
+    <form
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      name="contact"
+      method="POST"
+      action="/thanks"
+    >
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
+      <input type="hidden" name="form-name" value="contact" />
+      <label class="hidden" for="name">Name</label>
+      <input id="name" type="text" placeholder="name" name="name" class='p-2 mb-2 w-full text-black border-b-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' />
+      <label class="hidden" for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="email" required class='p-2 mb-2 w-full text-black border-b-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan' />
+      <label class="hidden" for="message">Message</label>
+      <textarea id="message" wrap="soft" name="message" placeholder="message" required class='w-full p-2 h-72 text-black border-2 border-darktan active:bg-tan focus:outline-none focus:ring focus:ring-tan'></textarea>
+      <button type="submit" class='bg-darktan text-white p-2 mt-4 hover:bg-tan hover:text-black hover:border-darktan border-2'>Submit</button>
+    </form>
+  </div>
+</div>

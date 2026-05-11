@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import facilities from "../data/facility.json";
+---
+
+<Layout title="Facility">
+  <div class="container mx-auto mt-8">
+    {facilities.map((facility) => (
+      <div>
+        <h1 class="text-darktan text-5xl text-center my-8 font-extrabold">{facility.title}</h1>
+        <img decoding="async" width={1000} height={550} loading="eager" class="z-10 object-cover w-full lg:w-3/4 m-auto" src={facility.mainImage} alt={facility.title} />
+        {[
+          { content: facility.article, image: facility.mainImage2 },
+          { content: facility.article2, image: facility.mainImage3 },
+          { content: facility.article3, image: facility.mainImage4 },
+          { content: facility.article4, image: null },
+        ].map(({ content, image }) => (
+          <div class="w-5/6 lg:w-1/2 text-center mx-auto my-8 text-xl md:text-4xl">
+            {content.map((line) => (
+              line && <p class="leading-relaxed mb-8 whitespace-pre-line">{line}</p>
+            ))}
+            {image && (
+              <img decoding="async" width={525} height={400} loading="lazy" class="z-10 object-cover w-full lg:w-3/4 m-auto" src={image} alt={facility.title} />
+            )}
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</Layout>

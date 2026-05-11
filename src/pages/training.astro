@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import trainingData from "../data/training.json";
+
+const { description, mainImage, trainers } = trainingData;
+---
+
+<Layout title="Training at Taft Hill Acres | Fort Collins Boarding Facility">
+  <div class="container mx-auto mt-8">
+    <h1 class="text-darktan text-5xl text-center my-8 font-extrabold uppercase">
+      Our Trainers
+    </h1>
+    <section
+      class="lg:w-3/4 flex flex-col lg:flex-row lg:justify-center mx-auto text-center my-6"
+    >
+      {
+        trainers.map((item) => (
+          <a
+            class="text-darktan text-2xl font-extrabold lg:mr-12 mb-4"
+            href={`#${item.trainer.replace(/[^\x20-\x7E]/g, "").toLowerCase().replace(/ /g, "-")}`}
+            rel="noopener noreferrer"
+          >
+            <span class="hover:border-b-2 hover:border-slate-50">
+              {item.trainer}
+            </span>
+          </a>
+        ))
+      }
+    </section>
+    <section class="lg:w-3/4 m-auto mb-16">
+      <h4 class="bg-darktan text-center text-tan text-4xl px-4 py-8">
+        {description}
+      </h4>
+      {mainImage && (
+        <img
+          decoding="async"
+          width={1000}
+          height={750}
+          class="object-cover w-full m-auto"
+          src={mainImage}
+          alt="Horse and rider in the arena"
+          loading="lazy"
+        />
+      )}
+    </section>
+    {
+      trainers
+        .slice()
+        .reverse()
+        .map((item) => (
+          <section
+            id={`${item.trainer.replace(/[^\x20-\x7E]/g, "").toLowerCase().replace(/ /g, "-")}`}
+            class="lg:w-3/4 m-auto text-center mb-16"
+          >
+            <div class="bg-darktan p-4">
+              <h3 class="text-white mb-4 md:text-2xl text-left">
+                {item.subtitle}
+              </h3>
+              <h2 class="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
+                {item.trainer}
+              </h2>
+            </div>
+            <img
+              decoding="async"
+              width={1000}
+              height={750}
+              class="m-auto max-h-[585px] w-full object-contain"
+              src={item.trainerImage}
+              alt={`Trainer ${item.trainer.replace(/[^\x20-\x7E]/g, "")} working with horse`}
+              loading="lazy"
+            />
+            <div class="trainer px-4 lg:px-0 text-left mt-6 text-xl md:text-2xl">
+              <Fragment set:html={item.bodyHtml} />
+            </div>
+          </section>
+        ))
+    }
+  </div>
+</Layout>

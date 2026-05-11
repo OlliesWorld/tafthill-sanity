@@ -1,0 +1,149 @@
+---
+import Layout from "../layouts/Layout.astro";
+import home from "../data/home.json";
+---
+
+<Layout title="Taft Hill Acres">
+  <div class="text-center h-full m-auto my-8">
+    <h1 class="w-full bg-tan text-4xl p-6 m-auto">
+      {home.title}
+    </h1>
+    <div class="w-full m-auto text-center">
+      {
+        home.mainImage && (
+          <div class="hero-image-wrap">
+            <img
+              decoding="async"
+              width={800}
+              height={600}
+              class="hero-image z-10"
+              src={home.mainImage}
+              alt="two horse noses sticking through the gate"
+              loading="eager"
+            />
+          </div>
+        )
+      }
+      <div class="w-full lg:w-5/6 my-12 m-auto lg:flex justify-center">
+        <p
+          class="text-2xl w-full lg:w-2/5 text-center border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 lg:pr-8"
+        >
+          {home.blurb}
+        </p>
+        <p class="text-2xl w-full lg:w-2/5 text-center lg:text-left lg:pl-16">
+          {home.blurb2}
+        </p>
+      </div>
+    </div>
+    <section class="w-full bg-tan mx-auto py-8 lg:p-8">
+      <div class="w-full lg:w-2/3 m-auto">
+        {home.subTitle2 && <h3 class="text-black text-2xl">{home.subTitle2}</h3>}
+        {home.title2 && <h2 class="text-black text-5xl text-center mb-12">{home.title2}</h2>}
+        <div class="lg:flex justify-center lg:text-left text-2xl items-center">
+          <div class="w-full mb-12 lg:w-1/2 p-4 lg:border-r-2">
+            <Fragment set:html={home.bodyHtml} />
+          </div>
+          <div class="w-full lg:w-1/2 lg:py-4 p-4 lg:pl-8">
+            <Fragment set:html={home.body2Html} />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="home-masonry-section">
+    <div class="text-center lg:text-left mt-4 pb-8">
+      <a
+        class="bg-tan text-darktan mt-24 p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
+        href={home.buttoninternalLink}
+        rel="noopener noreferrer"
+        >{home.button}</a
+      >
+    </div>
+
+    <div class="masonry">
+      {
+        home.mason && (
+          <img
+            decoding="async"
+            width={300}
+            height={400}
+            class="mb-4 mt-[2.5rem]"
+            src={home.mason}
+            alt="View of Taft Hill Acres horses in the pasture"
+            loading="lazy"
+          />
+        )
+      }
+      {
+        home.mason2 && (
+          <img
+            decoding="async"
+            width={300}
+            height={400}
+            class="mb-4"
+            src={home.mason2}
+            alt="Taft Hill Acres arena with horse and rider and the sun in the background"
+            loading="lazy"
+          />
+        )
+      }
+      {
+        home.mason4 && (
+          <img
+            decoding="async"
+            width={300}
+            height={400}
+            class="my-4"
+            src={home.mason4}
+            alt="View of Taft Hill Acres at sunset"
+            loading="lazy"
+          />
+        )
+      }
+      {
+        home.mason3 && (
+          <img
+            decoding="async"
+            width={300}
+            height={400}
+            class="mb-4"
+            src={home.mason3}
+            alt="One of Taft Hill Acres pen with no horses in it"
+            loading="lazy"
+          />
+        )
+      }
+    </div>
+
+    <div class="text-center lg:text-right mt-[4.7rem]">
+      <a
+        class="bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
+        href={home.button2internalLink}
+        rel="noopener noreferrer"
+        >{home.button2}</a
+      >
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-image-wrap {
+    width: min(100%, 1000px);
+    margin-inline: auto;
+    padding-inline: 0.75rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+    object-fit: cover;
+  }
+
+  .home-masonry-section {
+    width: min(100%, 980px);
+    margin: 6rem auto 0;
+    padding-inline: 0.75rem;
+  }
+</style>

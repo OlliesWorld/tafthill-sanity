@@ -1,0 +1,18 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "24" # Match project Node.js requirement
+
+# Configure Netlify dev command
+[dev]
+  command = "npm run dev"
+  port = 3000
+  targetPort = 4321 # Astro's default port
+
+# 404 fallback for static site
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

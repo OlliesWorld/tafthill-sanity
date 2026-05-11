@@ -1,0 +1,20 @@
+{
+  "description": "Taft Hill Acres hosts a diverse group of excellent trainers and instructors",
+  "mainImage": "/images/site/da90405451d1a3e9a3bbd1d41133e8cb5c666806-960x640-jpg-jumping.jpg",
+  "trainers": [
+    {
+      "trainer": "Melissa Bigler",
+      "subtitle": "Horse Trainer with a focus on working with the horse and creating a happy, willing partner.",
+      "slug": "melissa-bigler",
+      "trainerImage": "/images/site/11ad37a5c9c4f5ff1bd80daef4cac1c22bb96711-960x958-jpg-melissa-bigler.jpg",
+      "bodyHtml": "<p>Melissa is available as a traveling trainer and instructor around the Fort Collins area and here at Taft Hill Acres. Her main focus is in Dressage, Working Equitation, equine biomechanics, and eventing/jumpers. Her methods are a home grown mixture of natural horsemanship and classical training.</p><p>She has been riding since 1999 and training professionally since 2021. Over the years she has lived, trained, and competed in Ohio, Florida, Germany, Georgia, and now Colorado.</p><p>Previously, Melissa has been an assistant instructor at a large lesson barn near Atlanta. Now, she teaches lessons on one of her own horses, or on a student's personal horse. She enjoys sharing knowledge and promoting correct, well rounded, and kind riding - all while having fun!</p><p>Hands on horse training is Melissa&#8217;s biggest passion. From starting horses undersaddle to fixing behavioral problems, trailer loading, ground manners, competing client horses, and promoting sale horses.</p><p>Contact her for more information and availability.</p><p>470-658-6314</p><p>MelissaABigler@gmail.com</p><p>Melissa Bigler Horse Training on Facebook</p>"
+    },
+    {
+      "trainer": "Marie Demeulenaere",
+      "subtitle": "All levels of English and Western instruction",
+      "slug": "marie-demeulenaere",
+      "trainerImage": "/images/site/5bed40d4fcf85ed8ae09126a9a9552a6d95a36d4-2268x4032-jpg-Image.jpeg",
+      "bodyHtml": "<p>Marie Demeulenaere moved to the United States from France in 2018. She is a freelance horse riding instructor, and currently teaches in the area of Northern Colorado. Marie is a CHA certified LEVEL 4 master instructor and Assistant Certifier in English and Western disciplines. She is specialized in dressage/flat work, can also teach jumping, and she also trains horses. She comes from 25 years of english riding background, but after few years in Texas she can also ride and teach the basics of Western riding. Marie believes that both disciplines are mutually beneficial for the horse riding world and she takes her inspiration from Western and English dressage.</p><p>Prior to Colorado, she has been teaching horse riding to beginners and intermediates riders for 3 years in United States (Maryland). She started to move to expert riders in Colorado, since many students are asking her for dressage lessons. She also loves to teach ground work, horsemanship and she is happy to teach anyone, regardless their level.</p><p>Since she is originally from the countryside of Normandy, in France, she has a lot of experience in the french discipline and has been around horses all her life. She used to jump in high level competition, but she is mostly focused on teaching now because she also loves to spend her weekends hiking and traveling with her husband Kevin and her 2 year old son Marceau.</p><p>Marie can teach in French and English and she is always looking for opportunities and meeting people.</p><p>(301)606-5895</p>"
+    }
+  ]
+}
