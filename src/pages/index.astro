@@ -11,7 +11,7 @@ import home from "../data/home.json";
     <div class="w-full m-auto text-center">
       {
         home.mainImage && (
-          <div class="hero-image-wrap">
+          <div class="">
             <img
               decoding="async"
               width={800}
@@ -51,73 +51,81 @@ import home from "../data/home.json";
     </section>
   </div>
   <section class="home-masonry-section">
-    <div class="text-center lg:text-left mt-4 pb-8">
+    <div class="home-masonry-cta home-masonry-cta--top">
       <a
-        class="bg-tan text-darktan mt-24 p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
+        class="home-masonry-link bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
         href={home.buttoninternalLink}
         rel="noopener noreferrer"
         >{home.button}</a
       >
     </div>
 
-    <div class="masonry">
+    <div class="home-masonry-grid">
       {
         home.mason && (
-          <img
-            decoding="async"
-            width={300}
-            height={400}
-            class="mb-4 mt-[2.5rem]"
-            src={home.mason}
-            alt="View of Taft Hill Acres horses in the pasture"
-            loading="lazy"
-          />
+          <figure class="home-masonry-item home-masonry-item--offset">
+            <img
+              decoding="async"
+              width={300}
+              height={400}
+              class="home-masonry-image"
+              src={home.mason}
+              alt="View of Taft Hill Acres horses in the pasture"
+              loading="lazy"
+            />
+          </figure>
         )
       }
       {
         home.mason2 && (
-          <img
-            decoding="async"
-            width={300}
-            height={400}
-            class="mb-4"
-            src={home.mason2}
-            alt="Taft Hill Acres arena with horse and rider and the sun in the background"
-            loading="lazy"
-          />
+          <figure class="home-masonry-item">
+            <img
+              decoding="async"
+              width={300}
+              height={400}
+              class="home-masonry-image"
+              src={home.mason2}
+              alt="Taft Hill Acres arena with horse and rider and the sun in the background"
+              loading="lazy"
+            />
+          </figure>
         )
       }
       {
         home.mason4 && (
-          <img
-            decoding="async"
-            width={300}
-            height={400}
-            class="my-4"
-            src={home.mason4}
-            alt="View of Taft Hill Acres at sunset"
-            loading="lazy"
-          />
+          <figure class="home-masonry-item home-masonry-item--compact">
+            <img
+              decoding="async"
+              width={300}
+              height={400}
+              class="home-masonry-image"
+              src={home.mason4}
+              alt="View of Taft Hill Acres at sunset"
+              loading="lazy"
+            />
+          </figure>
         )
       }
       {
         home.mason3 && (
-          <img
-            decoding="async"
-            width={300}
-            height={400}
-            class="mb-4"
-            src={home.mason3}
-            alt="One of Taft Hill Acres pen with no horses in it"
-            loading="lazy"
-          />
+          <figure class="home-masonry-item home-masonry-item--offset-sm">
+            <img
+              decoding="async"
+              width={300}
+              height={400}
+              class="home-masonry-image"
+              src={home.mason3}
+              alt="One of Taft Hill Acres pen with no horses in it"
+              loading="lazy"
+            />
+          </figure>
         )
       }
     </div>
 
-    <div class="text-center lg:text-right mt-[4.7rem]">
+    <div class="home-masonry-cta home-masonry-cta--bottom">
       <a
-        class="bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
+        class="home-masonry-link bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
         href={home.button2internalLink}
         rel="noopener noreferrer"
         >{home.button2}</a
@@ -142,8 +150,75 @@ import home from "../data/home.json";
   }
 
   .home-masonry-section {
-    width: min(100%, 980px);
-    margin: 6rem auto 0;
+    /* width: min(100%, 1080px); */
+    margin: 5rem auto 0;
     padding-inline: 0.75rem;
+  }
+
+  .home-masonry-cta {
+    display: flex;
+    margin-block: 0 1rem;
+  }
+
+  .home-masonry-cta--top,
+  .home-masonry-cta--bottom {
+    justify-content: center;
+  }
+
+  .home-masonry-cta--bottom {
+    margin-block: 1rem 0;
+  }
+
+  .home-masonry-link {
+    display: inline-block;
+  }
+
+  .home-masonry-grid {
+    column-count: 1;
+    column-gap: 1rem;
+  }
+
+  .home-masonry-item {
+    break-inside: avoid;
+    margin: 0 0 1rem;
+  }
+
+  .home-masonry-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 640px) {
+    .home-masonry-grid {
+      column-count: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-masonry-cta--top {
+      justify-content: flex-start;
+    }
+
+    .home-masonry-cta--bottom {
+      justify-content: flex-end;
+    }
+
+    .home-masonry-grid {
+      column-count: 3;
+      column-gap: 1.25rem;
+    }
+
+    .home-masonry-item--offset {
+      margin-top: 2.25rem;
+    }
+
+    .home-masonry-item--compact {
+      margin-top: 0.75rem;
+    }
+
+    .home-masonry-item--offset-sm {
+      margin-top: 1.5rem;
+    }
   }
 </style>
