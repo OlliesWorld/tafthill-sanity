@@ -75,12 +75,9 @@ const rows = [
             decoding="async"
             class="w-full rounded-2xl object-cover lg:h-[26rem] lg:w-[55%] lg:shrink-0"
           />
-          <ul role="list" class="flex flex-col gap-4">
+          <ul role="list" class="list-disc space-y-4 pl-6 marker:text-brand-green">
             {row.items.map((item, i) => (
-              <li class="flex items-baseline gap-4 text-xl font-medium leading-snug tracking-[-0.015em] text-brand-ink">
-                <span aria-hidden="true" class="min-w-[1.75rem] font-serif italic text-base text-brand-green">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+              <li class="text-xl font-medium leading-snug tracking-[-0.015em] text-brand-ink">
                 <span>{item}</span>
               </li>
             ))}
