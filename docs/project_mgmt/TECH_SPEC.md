@@ -1,6 +1,6 @@
 # Taft Hill Acres Technical Specification
 
-Document version: 2026-05-10
+Document version: 2026-05-12
 Status: Active
 
 ## 1. Architecture Overview
@@ -21,12 +21,12 @@ No runtime CMS, database, authentication service, or custom backend API is requi
 
 1. Astro 5.18.x
 2. Vite 8.x
-3. Tailwind CSS 3.4.x with @astrojs/tailwind 6.x
+3. Tailwind CSS 4.1.x via @tailwindcss/vite (CSS-first, no tailwind.config)
 
 ### Tooling
 
 1. TypeScript (strict mode in src/tsconfig.json)
-2. ESLint 9 flat config
+2. ESLint 9 flat config (note: no Astro ESLint parser configured — Astro files show parse errors in ESLint but build correctly)
 3. Prettier plugin for Astro
 
 ### Hosting
@@ -64,8 +64,9 @@ Schema notes:
 ## 5. Build and Run
 
 1. Dev server: npm run dev
-2. Build CSS then site: npm run build
-3. Preview static output: npm run preview
+2. Build site: npm run build
+3. Clean dist: npm run clean
+4. Preview static output: npm run preview
 
 Build output:
 
@@ -91,15 +92,15 @@ No custom API endpoint is needed for contact handling.
 
 ## 8. Security/Operations Notes
 
-1. Current netlify.toml lacks explicit security header declarations.
-2. Node version mismatch exists: netlify.toml uses 18 while package.json expects >=20.
+1. Security headers (CSP, X-Frame-Options, etc.) should be added to netlify.toml — see docs/SECURITY.md.
+2. Node version in netlify.toml should match package.json engines field (>=24.x).
 3. Catch-all redirect in netlify.toml should be reviewed for static routing behavior.
 
 ## 9. Known Technical Debt
 
-1. Tailwind is still v3; migration to v4 remains a planned phase.
+1. ESLint has no Astro parser — `.astro` files show parse errors. Add `eslint-plugin-astro` to resolve.
 2. README content is outdated and still references legacy framework history.
-3. Some docs were imported from another project and are now being normalized.
+3. Netlify Node version in netlify.toml should be aligned with package.json engines field.
 
 ## 10. Change Control
 
@@ -109,15 +110,7 @@ When making feature/content changes:
 2. Validate with npm run build.
 3. Spot-check critical routes: /, /about, /facility, /training, /testimonials, /contact, /thanks.
 
-        if results.detections:
-            det = results.detections[0]
-            box = det.location_data.relative_bounding_box
-            face_frames.append({
-                "timestamp": round(timestamp, 2),
-                "face_x": round(box.xmin + box.width / 2, 4),   # center X (0-1)
-                "face_y": round(box.ymin + box.height / 2, 4),  # center Y (0-1)
-                "face_w": round(box.width, 4),
-                "face_h": round(box.height, 4),
+        "face_h": round(box.height, 4),
                 "confidence": round(det.score[0], 3),
             })
         else:

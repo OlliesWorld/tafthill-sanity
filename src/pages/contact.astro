@@ -4,21 +4,47 @@ import Form from "../components/Form.astro";
 const formKey = import.meta.env.FORM_KEY;
 ---
 
-<Layout title="Contact us" >
-    <div class="my-12">
-      <h2 class="text-darktan text-3xl text-center font-bold">Send us a message</h2>
-    <div class=" container grid lg:grid-cols-2  m-auto">
-     
+<Layout title="Contact | Taft Hill Acres">
+  {/* Page hero */}
+  <section aria-labelledby="contact-h" class="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Contact</p>
+    <h1 id="contact-h" class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.035em] text-brand-ink sm:text-6xl lg:text-7xl">
+      Get in
+      <span class="font-serif font-normal italic text-brand-green"> touch.</span>
+    </h1>
+  </section>
+
+  {/* Two-column contact layout */}
+  <section aria-label="Contact form and location" class="bg-brand-soft px-6 pb-20 sm:px-10 lg:grid lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-16 lg:px-16">
+    <div class="py-10">
+      <h2 class="mb-6 text-2xl font-medium tracking-[-0.02em] text-brand-ink">Send us a message</h2>
       <Form formKey={formKey} />
-      
-       <div class="lg:w-2/3 col-span-1 bg-tan  lg:h-8/12  p-6 text-xl m-auto">
-         <p>We are conveniently located within 2 miles of CSU, and Old Town. There is direct access to the Poudre Trail and close access to Lory State Park and Reservoir Ridge.</p>
-         <div class="text-3xl text-center mt-12">
-           <p>1012 N Taft Hill Rd</p>
-           <p>Fort Collins, CO 80521</p>
-         </div>
-                  
-       </div>
-   </div>
-   </div> 
- </Layout>
+    </div>
+
+    <div class="border-t border-brand-ink/10 py-10 lg:border-l lg:border-t-0 lg:pl-16">
+      <h2 class="mb-6 text-2xl font-medium tracking-[-0.02em] text-brand-ink">Find us</h2>
+      <p class="text-base leading-relaxed text-brand-muted">
+        We are conveniently located within 2 miles of CSU and Old Town. There is direct access to the Poudre Trail and close access to Lory State Park and Reservoir Ridge.
+      </p>
+
+      <address class="mt-8 not-italic">
+        <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Address</p>
+        <p class="mt-2 text-xl font-medium text-brand-ink">
+          1012 N Taft Hill Rd<br />
+          Fort Collins, CO 80521
+        </p>
+      </address>
+
+      <div class="mt-8">
+        <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Follow along</p>
+        <a
+          href="https://www.facebook.com/TaftHillAcres/?ref=hl"
+          class="mt-3 inline-flex min-h-11 items-center rounded-lg border border-brand-green/30 bg-brand-bg px-5 text-sm font-semibold text-brand-green transition hover:bg-white"
+          aria-label="Taft Hill Acres on Facebook"
+        >
+          Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

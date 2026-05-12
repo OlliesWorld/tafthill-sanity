@@ -4,23 +4,27 @@ import thanks from "../data/thanks.json";
 ---
 
 <Layout title="Thank you from Taft Hill Acres | Fort Collins Boarding Facility">
-  <div class="container mx-auto mt-8">
-    <div class="bg-tan text-center p-8">
-      <h2 class="text-green text-5xl mb-4">{thanks.title}</h2>
-      <h3 class="text-darktan text-2xl">{thanks.subtitle}</h3>
-      {
-        thanks.mainImage && (
-          <img
-            src={thanks.mainImage}
-            alt={thanks.title}
-            width={800}
-            height={600}
-            class="lg:w-1/2 mx-auto"
-            decoding="async"
-            loading="eager"
-          />
-        )
-      }
+  <section class="px-6 py-16 text-center sm:px-10 lg:px-16 lg:py-24">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Message sent</p>
+    <h1 class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.035em] text-brand-ink sm:text-6xl lg:text-7xl">
+      {thanks.title}
+    </h1>
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">{thanks.subtitle}</p>
+    {thanks.mainImage && (
+      <img
+        src={thanks.mainImage}
+        alt=""
+        width={480}
+        height={640}
+        class="mx-auto mt-10 max-h-[32rem] w-full max-w-sm rounded-2xl object-cover"
+        decoding="async"
+        loading="eager"
+      />
+    )}
+    <div class="mt-10">
+      <a href="/" class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-6 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep">
+        Back to home
+      </a>
     </div>
-  </div>
+  </section>
 </Layout>

@@ -1,6 +1,6 @@
 # Taft Hill Acres MVP Build Plan
 
-Document version: 2026-05-10
+Document version: 2026-05-12
 Scope: Static Astro marketing site improvements
 
 ## Current Baseline
@@ -11,14 +11,16 @@ Completed:
 2. Content migrated to local JSON files in src/data.
 3. Site converted to static output.
 4. Astro upgraded to latest 5.x.
+5. Tailwind v4 migration complete.
+6. Full site redesign to Variation B implemented across all pages.
+7. Accessibility pass complete (skip link, sr-only labels, aria-labelledby, focus-visible, semantic HTML).
+8. All image paths migrated to public/images/site.
 
-Open major phase:
-
-1. Tailwind v4 migration.
+No open major phases.
 
 ## Iterative Plan
 
-### Sprint 1: Documentation + Platform Hygiene
+### Sprint 1: Documentation + Platform Hygiene — ✅ Complete
 
 Goal: Align docs and runtime configuration with current architecture.
 
@@ -34,7 +36,7 @@ Done when:
 1. Docs describe this project only.
 2. Build runs consistently locally and in Netlify environment.
 
-### Sprint 2: Tailwind v4 Upgrade
+### Sprint 2: Tailwind v4 Upgrade — ✅ Complete
 
 Goal: Move styling stack from Tailwind 3 to Tailwind 4 safely.
 
@@ -52,7 +54,7 @@ Done when:
 2. Visual regression spot-check passes on all key routes.
 3. No Tailwind deprecation warnings remain.
 
-### Sprint 3: Performance and Accessibility Pass
+### Sprint 3: Performance and Accessibility Pass — ✅ Complete
 
 Goal: Improve UX quality and maintainability after migration.
 
@@ -68,7 +70,7 @@ Done when:
 1. No major accessibility issues in manual spot checks.
 2. Performance score improves or remains stable post-upgrade.
 
-### Sprint 4: Content Editing Workflow Hardening
+### Sprint 4: Content Editing Workflow Hardening — ⏳ Future
 
 Goal: Make local JSON editing safer and clearer.
 

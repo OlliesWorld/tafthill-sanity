@@ -6,74 +6,105 @@ const { description, mainImage, trainers } = trainingData;
 ---
 
 <Layout title="Training at Taft Hill Acres | Fort Collins Boarding Facility">
-  <div class="container mx-auto mt-8">
-    <h1 class="text-darktan text-5xl text-center my-8 font-extrabold uppercase">
-      Our Trainers
+  {/* Full-width green intro banner */}
+  <section
+    aria-labelledby="training-intro-h"
+    class="relative overflow-hidden bg-green px-6 py-24 text-center sm:px-10 lg:px-16 lg:py-32"
+    style={`background-image: linear-gradient(rgba(27,41,17,0.6), rgba(27,41,17,0.6)), url(${mainImage}); background-size: cover; background-position: center;`}
+  >
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-soft/80">Training</p>
+    <h1 id="training-intro-h" class="mx-auto mt-4 max-w-4xl text-4xl font-medium leading-[1.1] tracking-[-0.03em] text-brand-bg sm:text-5xl lg:text-6xl">
+      Taft Hill Acres hosts a diverse group of{" "}
+      <span class="font-serif font-normal italic">excellent trainers and instructors.</span>
     </h1>
-    <section
-      class="lg:w-3/4 flex flex-col lg:flex-row lg:justify-center mx-auto text-center my-6"
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brand-bg/85">
+      {description}. All levels of English and Western instruction.
+    </p>
+    <nav aria-label="Jump to trainer" class="mt-8 flex flex-wrap justify-center gap-3">
+      {trainers.map((t) => (
+        <a
+          href={`#${t.slug}`}
+          class="inline-flex min-h-10 items-center rounded-lg border border-brand-bg/30 px-5 text-sm font-semibold text-brand-bg transition hover:bg-white/10"
+        >
+          {t.trainer}
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  {/* Trainer cards — alternating layout */}
+  {trainers.slice().reverse().map((item, i) => (
+    <article
+      id={item.slug}
+      class={`px-6 py-16 sm:px-10 lg:px-16 lg:py-24 ${i % 2 === 0 ? "bg-brand-bg" : "bg-brand-soft"}`}
     >
-      {
-        trainers.map((item) => (
-          <a
-            class="text-darktan text-2xl font-extrabold lg:mr-12 mb-4"
-            href={`#${item.trainer.replace(/[^\x20-\x7E]/g, "").toLowerCase().replace(/ /g, "-")}`}
-            rel="noopener noreferrer"
-          >
-            <span class="hover:border-b-2 hover:border-slate-50">
-              {item.trainer}
-            </span>
-          </a>
-        ))
-      }
-    </section>
-    <section class="lg:w-3/4 m-auto mb-16">
-      <h4 class="bg-darktan text-center text-tan text-4xl px-4 py-8">
-        {description}
-      </h4>
-      {mainImage && (
-        <img
-          decoding="async"
-          width={1000}
-          height={750}
-          class="object-cover w-full m-auto"
-          src={mainImage}
-          alt="Horse and rider in the arena"
-          loading="lazy"
-        />
-      )}
-    </section>
-    {
-      trainers
-        .slice()
-        .reverse()
-        .map((item) => (
-          <section
-            id={`${item.trainer.replace(/[^\x20-\x7E]/g, "").toLowerCase().replace(/ /g, "-")}`}
-            class="lg:w-3/4 m-auto text-center mb-16"
-          >
-            <div class="bg-darktan p-4">
-              <h3 class="text-white mb-4 md:text-2xl text-left">
-                {item.subtitle}
-              </h3>
-              <h2 class="text-green text-4xl lg:text-6xl font-extrabold text-center mb-4">
+      <div class={`mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14${i % 2 !== 0 ? " lg:[grid-template-columns:1fr_1.4fr]" : ""}`}>
+        {i % 2 === 0 ? (
+          <>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Trainer</p>
+              <h2 class="mt-2 text-4xl font-medium leading-[1.05] tracking-[-0.025em] text-brand-ink lg:text-5xl">
                 {item.trainer}
               </h2>
+              <p class="mt-4 font-serif italic text-lg leading-relaxed text-brand-green lg:text-xl">
+                {item.subtitle}
+              </p>
+              <div class="mt-6 text-base leading-[1.7] text-brand-muted lg:text-[17px] [&_p]:mb-4 last:[&_p]:mb-0">
+                <Fragment set:html={item.bodyHtml} />
+              </div>
             </div>
             <img
-              decoding="async"
-              width={1000}
-              height={750}
-              class="m-auto max-h-[585px] w-full object-contain"
               src={item.trainerImage}
-              alt={`Trainer ${item.trainer.replace(/[^\x20-\x7E]/g, "")} working with horse`}
+              alt={`Portrait of ${item.trainer}`}
+              width={480}
+              height={520}
               loading="lazy"
+              decoding="async"
+              class="w-full max-w-sm rounded-2xl object-cover lg:h-[26rem]"
             />
-            <div class="trainer px-4 lg:px-0 text-left mt-6 text-xl md:text-2xl">
-              <Fragment set:html={item.bodyHtml} />
+          </>
+        ) : (
+          <>
+            <img
+              src={item.trainerImage}
+              alt={`Portrait of ${item.trainer}`}
+              width={480}
+              height={520}
+              loading="lazy"
+              decoding="async"
+              class="w-full max-w-sm rounded-2xl object-cover lg:h-[26rem] lg:justify-self-end"
+            />
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Trainer</p>
+              <h2 class="mt-2 text-4xl font-medium leading-[1.05] tracking-[-0.025em] text-brand-ink lg:text-5xl">
+                {item.trainer}
+              </h2>
+              <p class="mt-4 font-serif italic text-lg leading-relaxed text-brand-green lg:text-xl">
+                {item.subtitle}
+              </p>
+              <div class="mt-6 text-base leading-[1.7] text-brand-muted lg:text-[17px] [&_p]:mb-4 last:[&_p]:mb-0">
+                <Fragment set:html={item.bodyHtml} />
+              </div>
             </div>
-          </section>
-        ))
-    }
-  </div>
+          </>
+        )}
+      </div>
+    </article>
+  ))}
+
+  {/* CTA */}
+  <section class="bg-green px-6 py-14 text-center sm:px-10 lg:px-16">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-soft/70">Get started</p>
+    <h2 class="mx-auto mt-3 max-w-2xl text-3xl font-medium leading-snug tracking-[-0.02em] text-brand-bg lg:text-4xl">
+      Ready to work with one of our <span class="font-serif font-normal italic">trainers?</span>
+    </h2>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/contact" class="inline-flex min-h-11 items-center rounded-lg bg-brand-bg px-6 text-sm font-semibold text-brand-green-deep transition hover:bg-brand-soft">
+        Get in touch
+      </a>
+      <a href="/facility" class="inline-flex min-h-11 items-center rounded-lg border border-brand-bg/30 px-6 text-sm font-semibold text-brand-bg transition hover:bg-white/10">
+        See the facility
+      </a>
+    </div>
+  </section>
 </Layout>

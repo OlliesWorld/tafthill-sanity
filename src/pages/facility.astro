@@ -1,30 +1,108 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import facilities from "../data/facility.json";
+
+const f = facilities[0];
+
+const rows = [
+  {
+    img: f.mainImage,
+    alt: "Outdoor sand arena with jumps set",
+    items: f.article,
+  },
+  {
+    img: f.mainImage2,
+    alt: "Freshly groomed round pen",
+    items: f.article2,
+    flip: true,
+  },
+  {
+    img: f.mainImage3,
+    alt: "Barn breezeway",
+    items: f.article3,
+  },
+  {
+    img: f.mainImage4,
+    alt: "Horse in the wash rack",
+    items: ["Locked gates on both ends", "Owners and a resident manager live on the property", "Group pens and individual runs cleaned daily", "Haychix slow feed nets & Hayhut feeders"],
+    flip: true,
+  },
+];
 ---
 
-<Layout title="Facility">
-  <div class="container mx-auto mt-8">
-    {facilities.map((facility) => (
-      <div>
-        <h1 class="text-darktan text-5xl text-center my-8 font-extrabold">{facility.title}</h1>
-        <img decoding="async" width={1000} height={550} loading="eager" class="z-10 object-cover w-full lg:w-3/4 m-auto" src={facility.mainImage} alt={facility.title} />
-        {[
-          { content: facility.article, image: facility.mainImage2 },
-          { content: facility.article2, image: facility.mainImage3 },
-          { content: facility.article3, image: facility.mainImage4 },
-          { content: facility.article4, image: null },
-        ].map(({ content, image }) => (
-          <div class="w-5/6 lg:w-1/2 text-center mx-auto my-8 text-xl md:text-4xl">
-            {content.map((line) => (
-              line && <p class="leading-relaxed mb-8 whitespace-pre-line">{line}</p>
-            ))}
-            {image && (
-              <img decoding="async" width={525} height={400} loading="lazy" class="z-10 object-cover w-full lg:w-3/4 m-auto" src={image} alt={facility.title} />
-            )}
-          </div>
-        ))}
+<Layout title="Facility | Taft Hill Acres">
+  {/* Page hero */}
+  <section aria-labelledby="facility-h" class="grid items-center gap-10 px-6 py-16 sm:px-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:px-16 lg:py-20">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Facility</p>
+      <h1 id="facility-h" class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.035em] text-brand-ink sm:text-6xl lg:text-7xl">
+        Our
+        <span class="font-serif font-normal italic text-brand-green"> facility.</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">
+        Sand arena, round pen, locking tack rooms, indoor bathroom, and direct trail access — everything we have, in plain language.
+      </p>
+    </div>
+    <img
+      src={f.mainImage}
+      alt="Outdoor sand arena with jumps set up"
+      width={640}
+      height={420}
+      loading="eager"
+      decoding="async"
+      class="w-full rounded-[10rem_1.25rem_1.25rem_1.25rem] object-cover lg:h-[26rem]"
+    />
+  </section>
+
+  {/* Facility rows */}
+  <section aria-labelledby="amenities-h" class="bg-brand-soft px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Our facility</p>
+        <h2 id="amenities-h" class="mt-3 text-4xl font-medium leading-[1.05] tracking-[-0.025em] text-brand-ink lg:text-5xl">
+          Four areas, <span class="font-serif font-normal italic text-brand-green">laid out plainly.</span>
+        </h2>
       </div>
-    ))}
-  </div>
+
+      {rows.map((row, ri) => (
+        <div class={`flex flex-col gap-10 border-t border-brand-ink/10 py-10 lg:flex lg:flex-row lg:items-center lg:gap-12${row.flip ? " lg:flex-row-reverse" : ""}`}>
+          <img
+            src={row.img}
+            alt={row.alt}
+            width={640}
+            height={420}
+            loading="lazy"
+            decoding="async"
+            class="w-full rounded-2xl object-cover lg:h-[26rem] lg:w-[55%] lg:shrink-0"
+          />
+          <ul role="list" class="flex flex-col gap-4">
+            {row.items.map((item, i) => (
+              <li class="flex items-baseline gap-4 text-xl font-medium leading-snug tracking-[-0.015em] text-brand-ink">
+                <span aria-hidden="true" class="min-w-[1.75rem] font-serif italic text-base text-brand-green">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* CTA */}
+  <section class="bg-green px-6 py-14 text-center sm:px-10 lg:px-16">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-soft/70">Ready to visit?</p>
+    <h2 class="mx-auto mt-3 max-w-2xl text-3xl font-medium leading-snug tracking-[-0.02em] text-brand-bg lg:text-4xl">
+      Come see for yourself — <span class="font-serif font-normal italic">schedule a tour.</span>
+    </h2>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/contact" class="inline-flex min-h-11 items-center rounded-lg bg-brand-bg px-6 text-sm font-semibold text-brand-green-deep transition hover:bg-brand-soft">
+        Request a tour
+      </a>
+      <a href="/about" class="inline-flex min-h-11 items-center rounded-lg border border-brand-bg/30 px-6 text-sm font-semibold text-brand-bg transition hover:bg-white/10">
+        About the property
+      </a>
+    </div>
+  </section>
 </Layout>

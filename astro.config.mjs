@@ -1,17 +1,12 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   output: 'static',
   vite: {
+    plugins: [tailwindcss()],
     build: {
       chunkSizeWarningLimit: 1000,
     }
-  },
-  integrations: [
-    tailwind({
-      config: { path: './tailwind.config.cjs' },
-      applyBaseStyles: false,
-    }),
-  ],
+  }
 });

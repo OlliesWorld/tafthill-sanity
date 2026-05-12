@@ -1,10 +1,39 @@
 ---
+const { currentPath = "/", mobile = false } = Astro.props;
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/facility", label: "Facility" },
+  { href: "/training", label: "Training" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/contact", label: "Contact" },
+];
 ---
-<div class="nav-links text-center">
-  <a class="menu__item" href="/" rel="noopener noreferrer">Home</a>
-  <a class="menu__item" href="/about" rel="noopener noreferrer">About</a>
-  <a class="menu__item" href="/facility" rel="noopener noreferrer">Facility</a>
-  <a class="menu__item" href="/training" rel="noopener noreferrer">Training</a>
-  <a class="menu__item" href="/testimonials" rel="noopener noreferrer">Testimonials</a>
-  <a class="menu__item" href="/contact" rel="noopener noreferrer">Contact</a>
-</div>
+
+<nav aria-label="Primary">
+  <ul class:list={["m-0 list-none p-0", mobile ? "grid grid-cols-2 gap-2" : "flex flex-wrap items-center gap-2"]}>
+    {
+      links.map((link) => {
+        const isCurrent = currentPath === link.href;
+        return (
+          <li>
+            <a
+              href={link.href}
+              aria-current={isCurrent ? "page" : undefined}
+              class:list={[
+                "inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-semibold transition",
+                isCurrent
+                  ? "bg-brand-soft text-brand-ink"
+                  : "text-brand-muted hover:bg-brand-soft/70 hover:text-brand-ink",
+                mobile ? "w-full justify-center" : "",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

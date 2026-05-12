@@ -1,224 +1,163 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import home from "../data/home.json";
+
+const aboutLink = home.buttoninternalLink.startsWith("/")
+  ? home.buttoninternalLink
+  : `/${home.buttoninternalLink}`;
+const testimonialsLink = home.button2internalLink.startsWith("/")
+  ? home.button2internalLink
+  : `/${home.button2internalLink}`;
+
+const highlights = [
+  ["10", "acres"],
+  ["10 min", "from CSU"],
+  ["2012", "established"],
+];
+
+const features = [
+  {
+    title: "On-site management",
+    body: "Owners and manager live on site for reliable daily oversight.",
+  },
+  {
+    title: "Secure property",
+    body: "Locked gates at both ends and entrance video monitoring.",
+  },
+  {
+    title: "Comfort-first amenities",
+    body: "Heated restroom and locking tack rooms for boarder convenience.",
+  },
+  {
+    title: "Trainer flexibility",
+    body: "Multiple trainers available and outside trainers welcome by approval.",
+  },
+];
 ---
 
 <Layout title="Taft Hill Acres">
-  <div class="text-center h-full m-auto my-8">
-    <h1 class="w-full bg-tan text-4xl p-6 m-auto">
-      {home.title}
-    </h1>
-    <div class="w-full m-auto text-center">
-      {
-        home.mainImage && (
-          <div class="">
-            <img
-              decoding="async"
-              width={800}
-              height={600}
-              class="hero-image z-10"
-              src={home.mainImage}
-              alt="two horse noses sticking through the gate"
-              loading="eager"
-            />
-          </div>
-        )
-      }
-      <div class="w-full lg:w-5/6 my-12 m-auto lg:flex justify-center">
-        <p
-          class="text-2xl w-full lg:w-2/5 text-center border-b-2 lg:border-b-0 lg:border-r-2 border-darktan/50 lg:pr-8"
-        >
-          {home.blurb}
+<div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-10">
+  <section aria-labelledby="hero-h" class="overflow-hidden rounded-3xl border border-brand-ink/10 bg-brand-bg shadow-sm">
+    <div class="grid lg:grid-cols-2">
+      <div class="px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
+        <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Fort Collins horse boarding facility</p>
+        <h1 id="hero-h" class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.03em] text-brand-ink sm:text-6xl lg:text-7xl">
+          Happy horses,
+          <span class="font-serif font-normal italic text-brand-green"> healthy routines.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">
+          A spacious, comfortable ten-acre boarding facility owned and run by Megan and Rene Lizarraga, ten minutes north-west of CSU.
         </p>
-        <p class="text-2xl w-full lg:w-2/5 text-center lg:text-left lg:pl-16">
-          {home.blurb2}
-        </p>
-      </div>
-    </div>
-    <section class="w-full bg-tan mx-auto py-8 lg:p-8">
-      <div class="w-full lg:w-2/3 m-auto">
-        {home.subTitle2 && <h3 class="text-black text-2xl">{home.subTitle2}</h3>}
-        {home.title2 && <h2 class="text-black text-5xl text-center mb-12">{home.title2}</h2>}
-        <div class="lg:flex justify-center lg:text-left text-2xl items-center">
-          <div class="w-full mb-12 lg:w-1/2 p-4 lg:border-r-2">
-            <Fragment set:html={home.bodyHtml} />
-          </div>
-          <div class="w-full lg:w-1/2 lg:py-4 p-4 lg:pl-8">
-            <Fragment set:html={home.body2Html} />
-          </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/contact"
+            class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-5 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep"
+          >
+            Request a tour
+          </a>
+          <a
+            href="/facility"
+            class="inline-flex min-h-11 items-center rounded-lg border border-brand-green/30 bg-white/70 px-5 text-sm font-semibold text-brand-green transition hover:bg-brand-soft"
+          >
+            See the facility
+          </a>
         </div>
       </div>
-    </section>
-  </div>
-  <section class="home-masonry-section">
-    <div class="home-masonry-cta home-masonry-cta--top">
-      <a
-        class="home-masonry-link bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
-        href={home.buttoninternalLink}
-        rel="noopener noreferrer"
-        >{home.button}</a
-      >
-    </div>
 
-    <div class="home-masonry-grid">
       {
-        home.mason && (
-          <figure class="home-masonry-item home-masonry-item--offset">
-            <img
-              decoding="async"
-              width={300}
-              height={400}
-              class="home-masonry-image"
-              src={home.mason}
-              alt="View of Taft Hill Acres horses in the pasture"
-              loading="lazy"
-            />
-          </figure>
-        )
-      }
-      {
-        home.mason2 && (
-          <figure class="home-masonry-item">
-            <img
-              decoding="async"
-              width={300}
-              height={400}
-              class="home-masonry-image"
-              src={home.mason2}
-              alt="Taft Hill Acres arena with horse and rider and the sun in the background"
-              loading="lazy"
-            />
-          </figure>
-        )
-      }
-      {
-        home.mason4 && (
-          <figure class="home-masonry-item home-masonry-item--compact">
-            <img
-              decoding="async"
-              width={300}
-              height={400}
-              class="home-masonry-image"
-              src={home.mason4}
-              alt="View of Taft Hill Acres at sunset"
-              loading="lazy"
-            />
-          </figure>
-        )
-      }
-      {
-        home.mason3 && (
-          <figure class="home-masonry-item home-masonry-item--offset-sm">
-            <img
-              decoding="async"
-              width={300}
-              height={400}
-              class="home-masonry-image"
-              src={home.mason3}
-              alt="One of Taft Hill Acres pen with no horses in it"
-              loading="lazy"
-            />
-          </figure>
+        home.mainImage && (
+          <img
+            decoding="async"
+            width={900}
+            height={900}
+            class="h-full min-h-[22rem] w-full object-cover"
+            src={home.mainImage}
+            alt="Horse standing in the Taft Hill Acres pasture"
+            loading="eager"
+          />
         )
       }
     </div>
 
-    <div class="home-masonry-cta home-masonry-cta--bottom">
-      <a
-        class="home-masonry-link bg-tan text-darktan p-4 text-2xl font-extrabold hover:bg-green hover:rounded"
-        href={home.button2internalLink}
-        rel="noopener noreferrer"
-        >{home.button2}</a
-      >
+    <dl class="grid gap-4 border-t border-brand-ink/10 bg-brand-green px-6 py-8 text-brand-bg sm:grid-cols-3 sm:px-10 lg:px-12">
+      {
+        highlights.map(([number, label]) => (
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-bg/75">{label}</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-[-0.02em]">{number}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section aria-labelledby="story-h" class="mt-10 grid gap-8 rounded-3xl bg-brand-soft p-6 sm:p-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">{home.subTitle}</p>
+      <h2 id="story-h" class="mt-3 text-4xl font-medium leading-tight tracking-[-0.025em] text-brand-ink sm:text-5xl">
+        Two people who actually
+        <span class="font-serif font-normal italic text-brand-green"> know your horse.</span>
+      </h2>
+      <div class="mt-5 space-y-4 text-base leading-relaxed text-brand-muted sm:text-lg">
+        <Fragment set:html={home.bodyHtml} />
+      </div>
+      <a href={aboutLink} class="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-brand-green underline decoration-brand-green/40 underline-offset-4">
+        {home.button}
+      </a>
+    </div>
+
+    <div class="space-y-4 rounded-2xl border border-brand-ink/10 bg-brand-bg p-6 text-base leading-relaxed text-brand-muted sm:text-lg">
+      <h3 class="text-2xl font-medium tracking-[-0.02em] text-brand-ink">{home.title2}</h3>
+      <Fragment set:html={home.body2Html} />
+      <a href={testimonialsLink} class="inline-flex min-h-11 items-center text-sm font-semibold text-brand-green underline decoration-brand-green/40 underline-offset-4">
+        {home.button2}
+      </a>
     </div>
   </section>
+
+  <section aria-labelledby="features-h" class="mt-10">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+      <h2 id="features-h" class="max-w-3xl text-4xl font-medium leading-tight tracking-[-0.025em] text-brand-ink sm:text-5xl">
+        Built around the
+        <span class="font-serif font-normal italic text-brand-green"> everyday </span>
+        things you'll actually notice.
+      </h2>
+      <p class="max-w-sm text-sm text-brand-muted">The features below are what boarders most often call out in reviews.</p>
+    </div>
+
+    <ul class="grid gap-3 rounded-2xl border border-brand-ink/10 bg-brand-bg p-2 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        features.map((feature, index) => (
+          <li class="rounded-xl bg-brand-bg p-5 ring-1 ring-brand-ink/8">
+            <p class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft font-serif text-lg font-semibold text-brand-green">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+            <h3 class="mt-4 text-xl font-semibold tracking-[-0.01em] text-brand-ink">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-brand-muted">{feature.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-label="Property photos" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      [home.mason, home.mason2, home.mason4, home.mason3]
+        .filter(Boolean)
+        .map((image, index) => (
+          <figure class="overflow-hidden rounded-2xl">
+            <img
+              decoding="async"
+              width={500}
+              height={620}
+              class="h-full min-h-[18rem] w-full object-cover"
+              src={image}
+              alt={`Taft Hill Acres photo ${index + 1}`}
+              loading="lazy"
+            />
+          </figure>
+        ))
+    }
+  </section>
+</div>
 </Layout>
-
-<style>
-  .hero-image-wrap {
-    width: min(100%, 1000px);
-    margin-inline: auto;
-    padding-inline: 0.75rem;
-  }
-
-  .hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-inline: auto;
-    object-fit: cover;
-  }
-
-  .home-masonry-section {
-    /* width: min(100%, 1080px); */
-    margin: 5rem auto 0;
-    padding-inline: 0.75rem;
-  }
-
-  .home-masonry-cta {
-    display: flex;
-    margin-block: 0 1rem;
-  }
-
-  .home-masonry-cta--top,
-  .home-masonry-cta--bottom {
-    justify-content: center;
-  }
-
-  .home-masonry-cta--bottom {
-    margin-block: 1rem 0;
-  }
-
-  .home-masonry-link {
-    display: inline-block;
-  }
-
-  .home-masonry-grid {
-    column-count: 1;
-    column-gap: 1rem;
-  }
-
-  .home-masonry-item {
-    break-inside: avoid;
-    margin: 0 0 1rem;
-  }
-
-  .home-masonry-image {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: 640px) {
-    .home-masonry-grid {
-      column-count: 2;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .home-masonry-cta--top {
-      justify-content: flex-start;
-    }
-
-    .home-masonry-cta--bottom {
-      justify-content: flex-end;
-    }
-
-    .home-masonry-grid {
-      column-count: 3;
-      column-gap: 1.25rem;
-    }
-
-    .home-masonry-item--offset {
-      margin-top: 2.25rem;
-    }
-
-    .home-masonry-item--compact {
-      margin-top: 0.75rem;
-    }
-
-    .home-masonry-item--offset-sm {
-      margin-top: 1.5rem;
-    }
-  }
-</style>

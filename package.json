@@ -5,24 +5,24 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run build:css && astro build",
-    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./public/styles/tailwind.css",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint 'src/**/*.{astro,js,jsx,ts,tsx}'",
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@astrojs/tailwind": "6.0.2",
+    "@tailwindcss/vite": "^4.1.7",
     "astro": "5.18.1",
     "autoprefixer": "10.5.0",
     "netlify-cli": "19.1.5",
     "postcss-nesting": "13.0.1",
     "prettier-plugin-astro": "0.14.1",
-    "tailwindcss": "3.4.1"
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@eslint/js": "9.24.0",
+    "@rolldown/binding-darwin-arm64": "^1.0.0-rc.18",
     "eslint": "9.24.0",
     "globals": "16.0.0",
     "prettier": "3.5.3",

@@ -1,170 +1,36 @@
-<footer class="pt-12">
-  <div
-    class="footer-inner w-full lg:flex justify-center content-center m-auto pb-8 px-4"
-  >
-    <div class="w-48 md:w-1/4 m-auto pl-8 lg:pl-0 text-center flex">
-      <p class="uppercase my-auto">Follow us</p>
+<footer class="border-t border-brand-ink/10 bg-brand-soft/70 py-10">
+  <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-3 lg:gap-8 lg:px-10">
+    <section>
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Taft Hill Acres</p>
+      <h2 class="font-serif text-3xl italic text-brand-green">Fort Collins Horse Boarding Facility</h2>
+      <p class="mt-3 text-sm text-brand-muted">Serving the Fort Collins community since 2012.</p>
+    </section>
+
+    <section>
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Explore</p>
+      <ul class="m-0 grid list-none grid-cols-2 gap-2 p-0 text-sm font-semibold">
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/">Home</a></li>
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/about">About</a></li>
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/facility">Facility</a></li>
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/training">Training</a></li>
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/testimonials">Testimonials</a></li>
+        <li><a class="inline-flex min-h-11 items-center rounded-lg px-3 text-brand-muted hover:bg-white/70 hover:text-brand-ink" href="/contact">Contact</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Follow</p>
       <a
-        class="my-auto"
+        class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-4 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep"
         href="https://www.facebook.com/TaftHillAcres/?ref=hl"
-        aria-label="Head to Facebook to find out more"
+        aria-label="Visit Taft Hill Acres on Facebook"
       >
-        <svg
-          class="h-8 w-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="rgb(59 130 246)"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          {" "}
-          <path
-            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-          ></path>
-        </svg>
+        Facebook
       </a>
-    </div>
-    <div class="w-full p-6 lg:mt-8 lg:mr-8 h-auto text-center">
-      <h3 class="text-md justify-center text-xl">
-        Fort Collins Horse Boarding Facility
-      </h3>
-      <p class="text-center">Serving the Fort Collins community since 2012</p>
-    </div>
-    <div class="footer-links-wrap w-full mx-auto text-center mt-8 p-4">
-     
-        <div class="footer-grid grid grid-cols-2 text-sm h-full" style="height: 100%;">
-          <a
-            class="footer-link border-b-2 border-r-2 border-slate-300"
-            href="/"
-          >
-            <span data-text="Home">Home</span>
-          </a>
-          <a class="footer-link border-b-2 border-slate-300" href="/about">
-            <span data-text="About">About</span>
-          </a>
-          <a
-            class="footer-link border-b-2 border-r-2 border-slate-300"
-            href="/facility"
-          >
-            <span data-text="Facility">Facility</span>
-          </a>
-          <a class="footer-link border-b-2 border-slate-300" href="/training">
-            <span data-text="Training">Training</span>
-          </a>
-          <a
-            class="footer-link border-r-2 border-slate-300"
-            href="/testimonials"
-          >
-            <span data-text="Testimonials">Testimonials</span>
-          </a>
-          <a class="footer-link contact-btn" href="/contact">
-            <span
-              data-text="Contact"
-              class="block transition-transform duration-400 transform-gpu text-center"
-              >Contact</span
-            >
-          </a>
-        </div>
-    
-    </div>
+    </section>
   </div>
 
-  <div class=" bg-tan text-center py-4">
-    <p class="text-sm pt-2 m-0">
-      &copy; {new Date().getFullYear()} Taft Hill Acres
-    </p>
-    <p class="mt-0 text-sm">
-      Made with <span role="img">💙</span> by
-      <a class="footer-link-roni" href="https://roni.rocks/" target="/">
-        {" "}
-        Roni
-      </a>
-    </p>
+  <div class="mx-auto mt-10 w-full max-w-7xl border-t border-brand-ink/10 px-4 pt-6 text-sm text-brand-muted sm:px-6 lg:px-10">
+    <p class="m-0">&copy; {new Date().getFullYear()} Taft Hill Acres</p>
   </div>
 </footer>
-<style>
-  .footer-inner {
-    width: min(100%, 1100px);
-    margin-inline: auto;
-  }
-
-  .footer-links-wrap {
-    width: min(100%, 760px);
-    margin-inline: auto;
-  }
-
-  .footer-link {
-    position: relative;
-    perspective: 1000px;
-    color: #333;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    height: calc(160px / 3); /* Each link is exactly one-third of the container height */
-    box-sizing: border-box;
-  }
-
-  /* Hide the actual span text */
-  .footer-link span {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    color: transparent; /* Make the original text transparent */
-    font-size: 0; /* Alternative approach to hide text */
-    transition: transform 0.4s, font-size 0.4s; 
-  }
-
-  .footer-link:hover span {
-    transform: rotateX(180deg);
-  }
-
-  .footer-link span::before,
-  .footer-link span::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    content: attr(data-text); /* Use data-text attribute for content */
-    font-size: 16px; /* Reset font size */
-    transition: transform 0.4s, font-size 0.4s ease-in-out;
-  }
-
-  .footer-link span::before {
-    color: #333;
-  }
-
-  .footer-link span::after {
-    color: white;
-    background-color: #1b2911;
-    transform: rotateX(180deg);
-  }
-
-  /* Special styling for contact button */
-  .contact-btn span::before {
-    background-color: rgba(145,96,51,1); /* darktan color */
-    color: white;
-  }
-
-  .contact-btn span::after {
-    background-color: #1b2911; /* green color */
-    color: white;
-  }
-  .footer-link-roni {
-    transition: color 0.3s ease;
-  }
-  .footer-link-roni:hover {
-    color: oklch(48.8% 0.243 264.376); 
-    font-weight: 700;
-  }
-</style>
