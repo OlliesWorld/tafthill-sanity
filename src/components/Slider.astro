@@ -1,49 +1,54 @@
 ---
+import { getImage } from "astro:assets";
+import { siteImage } from "../lib/site-image";
+
 interface CardData {
     text: string;
     author: string;
     image: string;
 }
 
-const { cardsData } = Astro.props;
+const { cardsData } = Astro.props as { cardsData: CardData[] };
 
-// Log the cardsData to see if the data is coming through correctly
-// console.log('cardsData:', cardsData);
+const cards = await Promise.all(
+    cardsData.map(async (card) => {
+        const optimized = await getImage({
+            src: siteImage(card.image),
+            width: 1400,
+            format: "webp",
+        });
+        return { ...card, image: optimized.src };
+    }),
+);
 ---
 
 <div class="container">
     <div class="slide">
         {
-            cardsData.map((card: CardData, index: number) => {
-                // Log each card's name and quote to verify the data
-                // console.log('Card:', card);
-                return (
-                    <div
-                        class="item"
-                        style={`background-image: url(${card.image});`}
-                    >
-                        <div class="content bg-black p-4">
-                            <div class="description">{card.text}</div>
-                            <div class="name">{card.author}</div>
-                        </div>
+            cards.map((card) => (
+                <div
+                    class="item"
+                    style={`background-image: url(${card.image});`}
+                >
+                    <div class="content bg-black p-4">
+                        <div class="description">{card.text}</div>
+                        <div class="name">{card.author}</div>
                     </div>
-                );
-            })
+                </div>
+            ))
         }
     </div>
 
     <div class="button">
-        <button class="prev">
-            <div class="arrow">
-                <span class="default">&#x21dc;</span>
-                <span class="active">&#x2190;</span>
-            </div>
+        <button class="prev" aria-label="Previous testimonial">
+            <svg class="arrow" viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M39 6 H2 M8 1 L2 6 L8 11" />
+            </svg>
         </button>
-        <button class="next">
-            <div class="arrow">
-                <span class="default">&#x21dd;</span>
-                <span class="active">&#x2192;</span>
-            </div>
+        <button class="next" aria-label="Next testimonial">
+            <svg class="arrow" viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 6 H38 M32 1 L38 6 L32 11" />
+            </svg>
         </button>
     </div>
 </div>
@@ -217,62 +222,42 @@ const { cardsData } = Astro.props;
     }
 
     .button button {
-        width: 50px;
-        height: 50px;
-        border: none;
-        border-radius: 50%;
+        width: 64px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 999px;
         cursor: pointer;
-        transition: 0.3s;
-        background: rgba(0, 0, 0, 0.5);
-        position: relative;
-        /* Add transform properties for animation */
-        transform: scale(1);
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Add hover state */
-    .button button:hover {
-        background: rgba(0, 0, 0, 0.7);
-        transform: scale(1.05);
-    }
-
-    /* Add active state for the click animation */
-    .button button:active {
-        transform: scale(0.95);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Optional: Add animation for the arrow as well */
-    .arrow {
-        position: absolute;
-        left:10px;
-        top: 0;
-        color: white;
-        font-size: 50px;
-        line-height: 1;
-        transition: 0.2s ease;
-    }
-
-    .arrow .active {
-        display: none;
-    }
-    .button button:active .arrow .default {
-        display: none;
-    }
-
-    .button button:active .arrow .active {
-        display: inline;
-        margin-left: -10px;
-    }
-
-    /* Hover effect */
-    .button button:hover .arrow {
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
         color: #fff;
-        /* font-size: 55px; */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
     }
 
-    /* Remove the arrow-top and arrow-bottom styles since they're no longer needed */
+    .button button:hover {
+        background: rgba(0, 0, 0, 0.45);
+        border-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .button button:active {
+        transform: scale(0.97);
+    }
+
+    .arrow {
+        width: 28px;
+        height: 10px;
+        transition: transform 0.25s ease;
+    }
+
+    .button .prev:hover .arrow {
+        transform: translateX(-3px);
+    }
+
+    .button .next:hover .arrow {
+        transform: translateX(3px);
+    }
 </style>
 
 <script>

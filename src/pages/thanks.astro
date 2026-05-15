@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import thanks from "../data/thanks.json";
+import { siteImage } from "../lib/site-image";
 ---
 
 <Layout title="Thank you from Taft Hill Acres | Fort Collins Boarding Facility">
@@ -11,13 +13,12 @@ import thanks from "../data/thanks.json";
     </h1>
     <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">{thanks.subtitle}</p>
     {thanks.mainImage && (
-      <img
-        src={thanks.mainImage}
+      <Image
+        src={siteImage(thanks.mainImage)}
         alt=""
-        width={480}
-        height={640}
+        widths={[320, 480, 640]}
+        sizes="(min-width: 640px) 384px, 100vw"
         class="mx-auto mt-10 max-h-[32rem] w-full max-w-sm rounded-2xl object-cover"
-        decoding="async"
         loading="eager"
       />
     )}

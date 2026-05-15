@@ -1,3 +1,9 @@
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
 @import "tailwindcss";
 
 @theme {
@@ -11,7 +17,7 @@
   --color-brand-green: #3f5d4a;
   --color-brand-green-deep: #27392e;
 
-  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans Variable", "DM Sans", system-ui, -apple-system, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
 }
 

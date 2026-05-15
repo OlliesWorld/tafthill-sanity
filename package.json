@@ -12,6 +12,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.11",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "5.18.1",
     "autoprefixer": "10.5.0",

@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import facilities from "../data/facility.json";
+import { siteImage } from "../lib/site-image";
 
 const f = facilities[0];
 
@@ -43,13 +45,13 @@ const rows = [
         Sand arena, round pen, locking tack rooms, indoor bathroom, and direct trail access — everything we have, in plain language.
       </p>
     </div>
-    <img
-      src={f.mainImage}
+    <Image
+      src={siteImage(f.mainImage)}
       alt="Outdoor sand arena with jumps set up"
-      width={640}
-      height={420}
+      widths={[480, 768, 1024, 1280]}
+      sizes="(min-width: 1024px) 42vw, 100vw"
       loading="eager"
-      decoding="async"
+      fetchpriority="high"
       class="w-full rounded-[10rem_1.25rem_1.25rem_1.25rem] object-cover lg:h-[26rem]"
     />
   </section>
@@ -66,13 +68,12 @@ const rows = [
 
       {rows.map((row, ri) => (
         <div class={`flex flex-col gap-10 border-t border-brand-ink/10 py-10 lg:flex lg:flex-row lg:items-center lg:gap-12${row.flip ? " lg:flex-row-reverse" : ""}`}>
-          <img
-            src={row.img}
+          <Image
+            src={siteImage(row.img)}
             alt={row.alt}
-            width={640}
-            height={420}
+            widths={[480, 768, 1024, 1280]}
+            sizes="(min-width: 1024px) 55vw, 100vw"
             loading="lazy"
-            decoding="async"
             class="w-full rounded-2xl object-cover lg:h-[26rem] lg:w-[55%] lg:shrink-0"
           />
           <ul role="list" class="list-disc space-y-4 pl-6 marker:text-brand-green">

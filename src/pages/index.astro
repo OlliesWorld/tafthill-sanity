@@ -1,6 +1,18 @@
 ---
+import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import home from "../data/home.json";
+import { siteImage } from "../lib/site-image";
+
+const heroImg = home.mainImage ? siteImage(home.mainImage) : null;
+const heroOptimized = heroImg
+  ? await getImage({
+      src: heroImg,
+      widths: [480, 768, 1024, 1400],
+      sizes: "(min-width: 1024px) 50vw, 100vw",
+      format: "webp",
+    })
+  : null;
 
 const aboutLink = home.buttoninternalLink.startsWith("/")
   ? home.buttoninternalLink
@@ -35,7 +47,7 @@ const features = [
 ];
 ---
 
-<Layout title="Taft Hill Acres">
+<Layout title="Taft Hill Acres" heroPreload={heroOptimized}>
 <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-10">
   <section aria-labelledby="hero-h" class="overflow-hidden rounded-3xl border border-brand-ink/10 bg-brand-bg shadow-sm">
     <div class="grid lg:grid-cols-2">
@@ -65,24 +77,27 @@ const features = [
       </div>
 
       {
-        home.mainImage && (
+        heroOptimized && (
           <img
-            decoding="async"
-            width={900}
-            height={900}
             class="h-full min-h-[22rem] w-full object-cover"
-            src={home.mainImage}
+            src={heroOptimized.src}
+            srcset={heroOptimized.srcSet.attribute}
+            sizes={heroOptimized.attributes.sizes}
+            width={heroOptimized.attributes.width}
+            height={heroOptimized.attributes.height}
             alt="Horse standing in the Taft Hill Acres pasture"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         )
       }
     </div>
 
-    <dl class="grid gap-4 border-t border-brand-ink/10 bg-brand-green px-6 py-8 text-brand-bg sm:grid-cols-3 sm:px-10 lg:px-12">
+    <dl class="grid divide-y divide-brand-bg/20 border-t border-brand-ink/10 bg-brand-green px-6 text-brand-bg sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-10 sm:py-8 lg:px-12">
       {
         highlights.map(([number, label]) => (
-          <div>
+          <div class="py-5 text-center sm:px-6 sm:py-0">
             <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-bg/75">{label}</dt>
             <dd class="mt-1 text-3xl font-semibold tracking-[-0.02em]">{number}</dd>
           </div>
@@ -146,13 +161,12 @@ const features = [
         .filter(Boolean)
         .map((image, index) => (
           <figure class="overflow-hidden rounded-2xl">
-            <img
-              decoding="async"
-              width={500}
-              height={620}
+            <Image
               class="h-full min-h-[18rem] w-full object-cover"
-              src={image}
+              src={siteImage(image)}
               alt={`Taft Hill Acres photo ${index + 1}`}
+              widths={[320, 480, 640]}
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
               loading="lazy"
             />
           </figure>

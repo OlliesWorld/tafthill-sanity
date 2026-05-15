@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import about from "../data/about.json";
+import { siteImage } from "../lib/site-image";
 
 const galleryAlts = [
   "Cat sleeping on a hay net",
@@ -29,13 +31,13 @@ const galleryAlts = [
       </p>
     </div>
     {about.mainImage && (
-      <img
-        src={about.mainImage}
+      <Image
+        src={siteImage(about.mainImage)}
         alt="Looking across the bridge with the barn in the background"
-        width={640}
-        height={420}
+        widths={[480, 768, 1024, 1280]}
+        sizes="(min-width: 1024px) 42vw, 100vw"
         loading="eager"
-        decoding="async"
+        fetchpriority="high"
         class="w-full rounded-[10rem_1.25rem_1.25rem_1.25rem] object-cover lg:h-[26rem]"
       />
     )}
@@ -44,13 +46,12 @@ const galleryAlts = [
   {/* The Basics */}
   <section aria-labelledby="basics-h" class="bg-brand-soft px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
     <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-      <img
-        src="/images/site/2ba75ca54ec21777c552e933e6887a34e0ed2a68-960x720-jpg-Pen.jpg"
+      <Image
+        src={siteImage("/images/site/2ba75ca54ec21777c552e933e6887a34e0ed2a68-960x720-jpg-Pen.jpg")}
         alt="Five horses eating at a hay hut together"
-        width={640}
-        height={480}
+        widths={[480, 768, 1024]}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         loading="lazy"
-        decoding="async"
         class="w-full rounded-2xl object-cover lg:h-[32rem]"
       />
       <div>
@@ -77,13 +78,12 @@ const galleryAlts = [
           <Fragment set:html={about.body2Html} />
         </div>
       </div>
-      <img
-        src="/images/site/cc14612cf877b575663299697d4e40c5acdb1761-1440x1800-jpg-bikepath6.jpg"
+      <Image
+        src={siteImage("/images/site/cc14612cf877b575663299697d4e40c5acdb1761-1440x1800-jpg-bikepath6.jpg")}
         alt="Landscape view with pond on the right side"
-        width={640}
-        height={480}
+        widths={[480, 768, 1024]}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         loading="lazy"
-        decoding="async"
         class="w-full rounded-2xl object-cover lg:h-[32rem]"
       />
     </div>
@@ -102,13 +102,12 @@ const galleryAlts = [
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {about.gallery.map((src, i) => (
-          <img
-            src={src}
+          <Image
+            src={siteImage(src)}
             alt={galleryAlts[i] ?? ""}
-            width={480}
-            height={320}
+            widths={[320, 480, 640]}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             loading="lazy"
-            decoding="async"
             class="w-full rounded-2xl object-cover h-56 lg:h-64"
           />
         ))}
