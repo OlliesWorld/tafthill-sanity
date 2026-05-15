@@ -1,16 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import Navigation from "./Navigation.astro";
+import logo from "../assets/images/taft-hill-acres-logo.png";
 
 const { currentPath = "/" } = Astro.props;
-
 ---
 
 <header class="sticky top-0 z-50 border-b border-brand-ink/10 bg-brand-bg/95 backdrop-blur">
   <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
     <a href="/" class="inline-flex min-h-11 items-center" aria-label="Taft Hill Acres home">
-      <img
-        src="/images/taft-hill-acres-logo.png"
+      <Image
+        src={logo}
         alt="Taft Hill Acres"
+        widths={[176, 208, 352, 416]}
+        sizes="(min-width: 640px) 208px, 176px"
         class="w-44 mix-blend-multiply sm:w-52"
         loading="eager"
       />

@@ -8,7 +8,9 @@
       "Read(//private/tmp/**)",
       "Bash(awk '{printf \"%-12s %s\\\\n\", $5, $9}')",
       "Bash(xargs ls -la)",
-      "Bash(sort -k5 -rn)"
+      "Bash(sort -k5 -rn)",
+      "Bash(gzip -c dist/_astro/about.CcbvpKtB.css)",
+      "Bash(gzip -c dist/index.html)"
     ]
   }
 }
