@@ -14,7 +14,15 @@ interface HeroPreload {
   };
 }
 
-const { title, heroPreload } = Astro.props as { title: string; heroPreload?: HeroPreload };
+const {
+  title,
+  description = "Taft Hill Acres is a ten-acre horse boarding facility ten minutes north-west of CSU in Fort Collins, owned and run by Megan and Rene Lizarraga.",
+  heroPreload,
+} = Astro.props as {
+  title: string;
+  description?: string;
+  heroPreload?: HeroPreload;
+};
 const currentPath = Astro.url.pathname;
 // const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == 'true'
 ---
@@ -26,6 +34,7 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
 
     {heroPreload && (
       <link

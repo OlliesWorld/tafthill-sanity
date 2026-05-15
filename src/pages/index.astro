@@ -11,6 +11,7 @@ const heroOptimized = heroImg
       widths: [480, 768, 1024, 1400],
       sizes: "(min-width: 1024px) 50vw, 100vw",
       format: "webp",
+      quality: 65,
     })
   : null;
 
@@ -47,7 +48,11 @@ const features = [
 ];
 ---
 
-<Layout title="Taft Hill Acres" heroPreload={heroOptimized}>
+<Layout
+  title="Taft Hill Acres | Fort Collins Horse Boarding"
+  description="A spacious ten-acre horse boarding facility in Fort Collins, ten minutes from CSU. Sand arena, locking tack rooms, on-site owners, and direct trail access."
+  heroPreload={heroOptimized}
+>
 <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-10">
   <section aria-labelledby="hero-h" class="overflow-hidden rounded-3xl border border-brand-ink/10 bg-brand-bg shadow-sm">
     <div class="grid lg:grid-cols-2">
