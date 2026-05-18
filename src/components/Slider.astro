@@ -263,17 +263,11 @@ const cards = await Promise.all(
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const initializeSlider = () => {
-            console.log("initializeSlider function called");
-
             const next = document.querySelector(".next");
             const prev = document.querySelector(".prev");
 
-            console.log("Next button:", next);
-            console.log("Prev button:", prev);
-
             if (next && prev) {
                 next.addEventListener("click", function () {
-                    console.log("Next button clicked");
                     const items = document.querySelectorAll(".item");
                     const slide = document.querySelector(".slide");
                     if (slide) {
@@ -283,7 +277,6 @@ const cards = await Promise.all(
                 });
 
                 prev.addEventListener("click", function () {
-                    console.log("Prev button clicked");
                     const items = document.querySelectorAll(".item");
                     const slide = document.querySelector(".slide");
                     if (slide) {

@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Form from "../components/Form.astro";
-const formKey = import.meta.env.FORM_KEY;
 ---
 
 <Layout
@@ -21,7 +20,7 @@ const formKey = import.meta.env.FORM_KEY;
   <section aria-label="Contact form and location" class="bg-brand-soft px-6 pb-20 sm:px-10 lg:grid lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-16 lg:px-16">
     <div class="py-10">
       <h2 class="mb-6 text-2xl font-medium tracking-[-0.02em] text-brand-ink">Send us a message</h2>
-      <Form formKey={formKey} />
+      <Form />
     </div>
 
     <div class="border-t border-brand-ink/10 py-10 lg:border-l lg:border-t-0 lg:pl-16">
