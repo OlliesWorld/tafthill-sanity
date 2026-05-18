@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import thanks from "../data/thanks.json";
+import { siteImage } from "../lib/site-image";
+---
+
+<Layout title="Thank you from Taft Hill Acres | Fort Collins Boarding Facility">
+  <section class="px-6 py-16 text-center sm:px-10 lg:px-16 lg:py-24">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Message sent</p>
+    <h1 class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.035em] text-brand-ink sm:text-6xl lg:text-7xl">
+      {thanks.title}
+    </h1>
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">{thanks.subtitle}</p>
+    {thanks.mainImage && (
+      <Image
+        src={siteImage(thanks.mainImage)}
+        alt=""
+        widths={[320, 480, 640]}
+        sizes="(min-width: 640px) 384px, 100vw"
+        class="mx-auto mt-10 max-h-[32rem] w-full max-w-sm rounded-2xl object-cover"
+        loading="eager"
+      />
+    )}
+    <div class="mt-10">
+      <a href="/" class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-6 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep">
+        Back to home
+      </a>
+    </div>
+  </section>
+</Layout>

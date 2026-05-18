@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.googleapis.com)",
+      "Bash(curl -s -o /tmp/psi-mobile.json -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fastrowork--tafthill-sanity.netlify.app%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo\")",
+      "Bash(curl -s -o /tmp/psi-desktop.json -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fastrowork--tafthill-sanity.netlify.app%2F&strategy=desktop&category=performance\")",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(awk '{printf \"%-12s %s\\\\n\", $5, $9}')",
+      "Bash(xargs ls -la)",
+      "Bash(sort -k5 -rn)",
+      "Bash(gzip -c dist/_astro/about.CcbvpKtB.css)",
+      "Bash(gzip -c dist/index.html)"
+    ]
+  }
+}

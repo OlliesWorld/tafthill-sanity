@@ -1,0 +1,182 @@
+---
+import { Image, getImage } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import home from "../data/home.json";
+import { siteImage } from "../lib/site-image";
+
+const heroImg = home.mainImage ? siteImage(home.mainImage) : null;
+const heroOptimized = heroImg
+  ? await getImage({
+      src: heroImg,
+      widths: [480, 768, 1024, 1400],
+      sizes: "(min-width: 1024px) 50vw, 100vw",
+      format: "webp",
+      quality: 65,
+    })
+  : null;
+
+const aboutLink = home.buttoninternalLink.startsWith("/")
+  ? home.buttoninternalLink
+  : `/${home.buttoninternalLink}`;
+const testimonialsLink = home.button2internalLink.startsWith("/")
+  ? home.button2internalLink
+  : `/${home.button2internalLink}`;
+
+const highlights = [
+  ["10", "acres"],
+  ["10 min", "from CSU"],
+  ["2012", "established"],
+];
+
+const features = [
+  {
+    title: "On-site management",
+    body: "Owners and manager live on site for reliable daily oversight.",
+  },
+  {
+    title: "Secure property",
+    body: "Locked gates at both ends and entrance video monitoring.",
+  },
+  {
+    title: "Comfort-first amenities",
+    body: "Heated restroom and locking tack rooms for boarder convenience.",
+  },
+  {
+    title: "Trainer flexibility",
+    body: "Multiple trainers available and outside trainers welcome by approval.",
+  },
+];
+---
+
+<Layout
+  title="Taft Hill Acres | Fort Collins Horse Boarding"
+  description="A spacious ten-acre horse boarding facility in Fort Collins, ten minutes from CSU. Sand arena, locking tack rooms, on-site owners, and direct trail access."
+  heroPreload={heroOptimized}
+>
+<div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-10">
+  <section aria-labelledby="hero-h" class="overflow-hidden rounded-3xl border border-brand-ink/10 bg-brand-bg shadow-sm">
+    <div class="grid lg:grid-cols-2">
+      <div class="px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
+        <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Fort Collins horse boarding facility</p>
+        <h1 id="hero-h" class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.03em] text-brand-ink sm:text-6xl lg:text-7xl">
+          Happy horses,
+          <span class="font-serif font-normal italic text-brand-green"> healthy routines.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-brand-muted">
+          A spacious, comfortable ten-acre boarding facility owned and run by Megan and Rene Lizarraga, ten minutes north-west of CSU.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/contact"
+            class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-5 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep"
+          >
+            Request a tour
+          </a>
+          <a
+            href="/facility"
+            class="inline-flex min-h-11 items-center rounded-lg border border-brand-green/30 bg-white/70 px-5 text-sm font-semibold text-brand-green transition hover:bg-brand-soft"
+          >
+            See the facility
+          </a>
+        </div>
+      </div>
+
+      {
+        heroOptimized && (
+          <img
+            class="h-full min-h-[22rem] w-full object-cover"
+            src={heroOptimized.src}
+            srcset={heroOptimized.srcSet.attribute}
+            sizes={heroOptimized.attributes.sizes}
+            width={heroOptimized.attributes.width}
+            height={heroOptimized.attributes.height}
+            alt="Horse standing in the Taft Hill Acres pasture"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        )
+      }
+    </div>
+
+    <dl class="grid divide-y divide-brand-bg/20 border-t border-brand-ink/10 bg-brand-green px-6 text-brand-bg sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-10 sm:py-8 lg:px-12">
+      {
+        highlights.map(([number, label]) => (
+          <div class="py-5 text-center sm:px-6 sm:py-0">
+            <dt class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-bg/75">{label}</dt>
+            <dd class="mt-1 text-3xl font-semibold tracking-[-0.02em]">{number}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section aria-labelledby="story-h" class="mt-10 grid gap-8 rounded-3xl bg-brand-soft p-6 sm:p-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">{home.subTitle}</p>
+      <h2 id="story-h" class="mt-3 text-4xl font-medium leading-tight tracking-[-0.025em] text-brand-ink sm:text-5xl">
+        Two people who actually
+        <span class="font-serif font-normal italic text-brand-green"> know your horse.</span>
+      </h2>
+      <div class="mt-5 space-y-4 text-base leading-relaxed text-brand-muted sm:text-lg">
+        <Fragment set:html={home.bodyHtml} />
+      </div>
+      <a href={aboutLink} class="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-brand-green underline decoration-brand-green/40 underline-offset-4">
+        {home.button}
+      </a>
+    </div>
+
+    <div class="space-y-4 rounded-2xl border border-brand-ink/10 bg-brand-bg p-6 text-base leading-relaxed text-brand-muted sm:text-lg">
+      <h3 class="text-2xl font-medium tracking-[-0.02em] text-brand-ink">{home.title2}</h3>
+      <Fragment set:html={home.body2Html} />
+      <a href={testimonialsLink} class="inline-flex min-h-11 items-center text-sm font-semibold text-brand-green underline decoration-brand-green/40 underline-offset-4">
+        {home.button2}
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="features-h" class="mt-10">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+      <h2 id="features-h" class="max-w-3xl text-4xl font-medium leading-tight tracking-[-0.025em] text-brand-ink sm:text-5xl">
+        Built around the
+        <span class="font-serif font-normal italic text-brand-green"> everyday </span>
+        things you'll actually notice.
+      </h2>
+      <p class="max-w-sm text-sm text-brand-muted">The features below are what boarders most often call out in reviews.</p>
+    </div>
+
+    <ul class="grid gap-3 rounded-2xl border border-brand-ink/10 bg-brand-bg p-2 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        features.map((feature, index) => (
+          <li class="rounded-xl bg-brand-bg p-5 ring-1 ring-brand-ink/8">
+            <p class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft font-serif text-lg font-semibold text-brand-green">
+              {String(index + 1).padStart(2, "0")}
+            </p>
+            <h3 class="mt-4 text-xl font-semibold tracking-[-0.01em] text-brand-ink">{feature.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-brand-muted">{feature.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-label="Property photos" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      [home.mason, home.mason2, home.mason4, home.mason3]
+        .filter(Boolean)
+        .map((image, index) => (
+          <figure class="overflow-hidden rounded-2xl">
+            <Image
+              class="h-full min-h-[18rem] w-full object-cover"
+              src={siteImage(image)}
+              alt={`Taft Hill Acres photo ${index + 1}`}
+              widths={[320, 480, 640]}
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+              loading="lazy"
+            />
+          </figure>
+        ))
+    }
+  </section>
+</div>
+</Layout>

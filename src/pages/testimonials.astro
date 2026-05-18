@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Slider from "../components/Slider.astro";
+import testimonialsData from "../data/testimonials.json";
+
+const cardsData = testimonialsData.cards;
+---
+
+<Layout
+  title="Testimonials | Taft Hill Acres"
+  description="Hear directly from the boarders who call Taft Hill Acres home — stories from the people and horses who keep their horses with us."
+>
+  {/* Page hero */}
+  <section aria-labelledby="testimonials-h" class="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Testimonials</p>
+    <h1 id="testimonials-h" class="mt-4 text-5xl font-medium leading-[0.95] tracking-[-0.035em] text-brand-ink sm:text-6xl lg:text-7xl">
+      What our boarders
+      <span class="font-serif font-normal italic text-brand-green"> have to say.</span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-brand-muted">
+      Hear directly from the people and horses who call Taft Hill Acres home.
+    </p>
+  </section>
+
+  {/* Image slider */}
+  <div class="my-8">
+    <Slider {cardsData} />
+  </div>
+
+  {/* CTA */}
+  <section class="px-6 py-14 text-center sm:px-10 lg:px-16">
+    <p class="text-xs font-bold uppercase tracking-[0.08em] text-brand-green">Join the community</p>
+    <h2 class="mx-auto mt-3 max-w-2xl text-3xl font-medium leading-snug tracking-[-0.02em] text-brand-ink lg:text-4xl">
+      Ready to see it for <span class="font-serif font-normal italic text-brand-green">yourself?</span>
+    </h2>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="/contact" class="inline-flex min-h-11 items-center rounded-lg bg-brand-green px-6 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep">
+        Request a tour
+      </a>
+      <a href="/about" class="inline-flex min-h-11 items-center rounded-lg border border-brand-green/30 bg-white/70 px-6 text-sm font-semibold text-brand-green transition hover:bg-brand-soft">
+        Learn about us
+      </a>
+    </div>
+  </section>
+</Layout>

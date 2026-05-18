@@ -1,0 +1,304 @@
+---
+import { getImage } from "astro:assets";
+import { siteImage } from "../lib/site-image";
+
+interface CardData {
+    text: string;
+    author: string;
+    image: string;
+}
+
+const { cardsData } = Astro.props as { cardsData: CardData[] };
+
+const cards = await Promise.all(
+    cardsData.map(async (card) => {
+        const optimized = await getImage({
+            src: siteImage(card.image),
+            width: 1400,
+            format: "webp",
+        });
+        return { ...card, image: optimized.src };
+    }),
+);
+---
+
+<div class="container">
+    <div class="slide">
+        {
+            cards.map((card) => (
+                <div
+                    class="item"
+                    style={`background-image: url(${card.image});`}
+                >
+                    <div class="content bg-black p-4">
+                        <div class="description">{card.text}</div>
+                        <div class="name">{card.author}</div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <div class="button">
+        <button class="prev" aria-label="Previous testimonial">
+            <svg class="arrow" viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M39 6 H2 M8 1 L2 6 L8 11" />
+            </svg>
+        </button>
+        <button class="next" aria-label="Next testimonial">
+            <svg class="arrow" viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 6 H38 M32 1 L38 6 L32 11" />
+            </svg>
+        </button>
+    </div>
+</div>
+<style>
+    /* Your existing CSS styles */
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1000px;
+        height: 600px;
+        background: #f5f5f5;
+        box-shadow: 0 30px 50px #dbdbdb;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .container .slide .item {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 20px;
+        box-shadow: 0 30px 50px #505050;
+        background-position: 50% 50%;
+        background-size: cover;
+        display: inline-block;
+        transition: 0.5s;
+    }
+    @media (max-width: 1024px) {
+        .container {
+            height: 90vh;
+            width: 90%;
+        }
+        .container .slide .item:not(.active) {
+            display: none;
+        }
+    }
+    @media (max-width: 768px) {
+        .container {
+            height: 80vh;
+        }
+    }
+
+    .container .slide .item.active {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide .item:nth-child(3) {
+        left: 50%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide .item:nth-child(4) {
+        left: calc(50% + 220px);
+    }
+
+    .slide .item:nth-child(5) {
+        left: calc(50% + 440px);
+    }
+
+    .slide .item:nth-child(n + 6) {
+        left: calc(50% + 660px);
+        opacity: 0;
+    }
+
+    .item .content {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        width: 300px;
+        text-align: left;
+        color: #eee;
+        transform: translate(0, -50%);
+        font-family: system-ui;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+        .item .content {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 800px;
+            max-height: 800px;
+        }
+    }
+
+    .slide .item.active .content {
+        display: block;
+    }
+
+    .content .name {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
+    }
+
+    .content .description {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
+        @media (max-width: 768px) {
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .content button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.6s 1 forwards;
+    }
+
+    @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translate(0, 100px);
+            filter: blur(33px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0);
+        }
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .button {
+            bottom: 20px;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+    }
+
+    .button button {
+        width: 64px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 999px;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    }
+
+    .button button:hover {
+        background: rgba(0, 0, 0, 0.45);
+        border-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .button button:active {
+        transform: scale(0.97);
+    }
+
+    .arrow {
+        width: 28px;
+        height: 10px;
+        transition: transform 0.25s ease;
+    }
+
+    .button .prev:hover .arrow {
+        transform: translateX(-3px);
+    }
+
+    .button .next:hover .arrow {
+        transform: translateX(3px);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const initializeSlider = () => {
+            const next = document.querySelector(".next");
+            const prev = document.querySelector(".prev");
+
+            if (next && prev) {
+                next.addEventListener("click", function () {
+                    const items = document.querySelectorAll(".item");
+                    const slide = document.querySelector(".slide");
+                    if (slide) {
+                        slide.appendChild(items[0]);
+                        updateActiveSlide();
+                    }
+                });
+
+                prev.addEventListener("click", function () {
+                    const items = document.querySelectorAll(".item");
+                    const slide = document.querySelector(".slide");
+                    if (slide) {
+                        slide.prepend(items[items.length - 1]);
+                        updateActiveSlide();
+                    }
+                });
+            }
+        };
+
+        const updateActiveSlide = () => {
+            const items = document.querySelectorAll(".item");
+            items.forEach((item, index) => {
+                if (index === 1) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+        };
+
+        initializeSlider();
+        updateActiveSlide();
+    });
+</script>

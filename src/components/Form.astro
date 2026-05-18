@@ -1,0 +1,58 @@
+<form
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  name="contact"
+  method="POST"
+  action="/thanks"
+  class="flex flex-col gap-4"
+>
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div>
+    <label class="sr-only" for="name">Name</label>
+    <input
+      id="name"
+      type="text"
+      placeholder="Your name"
+      name="name"
+      class="w-full rounded-lg border border-brand-ink/20 bg-brand-bg px-4 py-3 text-brand-ink placeholder:text-brand-muted/60 focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+    />
+  </div>
+
+  <div>
+    <label class="sr-only" for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="Your email"
+      required
+      class="w-full rounded-lg border border-brand-ink/20 bg-brand-bg px-4 py-3 text-brand-ink placeholder:text-brand-muted/60 focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+    />
+  </div>
+
+  <div>
+    <label class="sr-only" for="message">Message</label>
+    <textarea
+      id="message"
+      wrap="soft"
+      name="message"
+      placeholder="Your message"
+      required
+      rows="6"
+      class="w-full rounded-lg border border-brand-ink/20 bg-brand-bg px-4 py-3 text-brand-ink placeholder:text-brand-muted/60 focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="inline-flex min-h-11 items-center justify-center rounded-lg bg-brand-green px-6 text-sm font-semibold text-brand-bg transition hover:bg-brand-green-deep"
+  >
+    Send message
+  </button>
+</form>

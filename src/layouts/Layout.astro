@@ -1,0 +1,65 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+
+interface HeroPreload {
+  src: string;
+  attributes: {
+    sizes?: string;
+  };
+  srcSet: {
+    attribute: string;
+  };
+}
+
+const {
+  title,
+  description = "Taft Hill Acres is a ten-acre horse boarding facility ten minutes north-west of CSU in Fort Collins, owned and run by Megan and Rene Lizarraga.",
+  heroPreload,
+} = Astro.props as {
+  title: string;
+  description?: string;
+  heroPreload?: HeroPreload;
+};
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    {heroPreload && (
+      <link
+        rel="preload"
+        as="image"
+        href={heroPreload.src}
+        imagesrcset={heroPreload.srcSet.attribute}
+        imagesizes={heroPreload.attributes.sizes}
+        fetchpriority="high"
+      />
+    )}
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-brand-bg text-brand-ink">
+    <a
+      href="#main-content"
+      class="pointer-events-none fixed left-4 top-4 z-[70] -translate-y-16 rounded-lg bg-brand-green px-4 py-3 text-sm font-semibold text-brand-bg opacity-0 transition focus:pointer-events-auto focus:translate-y-0 focus:opacity-100"
+    >
+      Skip to content
+    </a>
+    <div class="min-h-screen">
+      <Header currentPath={currentPath} />
+      <main id="main-content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
